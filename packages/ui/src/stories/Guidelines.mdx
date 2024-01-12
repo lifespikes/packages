@@ -1,0 +1,43 @@
+# Payroll UI Documentation
+
+## Introduction
+
+The UI package is designed with the aim of centralizing the common components utilized in
+the [shadcn](https://ui.shadcn.com/) project, along with encapsulating components derived from this library. This
+package fosters a clean and coherent architecture, facilitating component reusability and code maintainability within
+the project ecosystem.
+
+## Guidelines
+
+### Directory Structure
+
+- All components should reside in the `src/components/ui` directory.
+- Each new component should be housed in a new folder, following the structure `components/ui/button` for a `Button`
+  component, for instance.
+- Principal components: these are components that provide direct functionality usage. For example, a `Table` component
+  is divided into `TableHeader`, `TableBody`, and `TableFooter`, but it's only necessary to create a `Story` for the
+  main `Table` component, not for its sub-components.
+
+### Naming Convention
+
+- File naming should follow the `some-component` format.
+- Utilities should be housed within `lib/utilities`.
+- Each file should export its interface; there's no need for a separate file for interface definition.
+
+### Documentation and Visualization
+
+- To enhance the documentation and visualization of components, a Storybook project has been set up allowing for a more
+  interactive visualization of components and demonstrating their correct usage.
+- Each principal component should have an associated story within `src/stories/components`. It's not necessary to create
+  stories for sub-components, only for the principal component.
+- Every principal component and its sub-components should be exported in `src/index.ts`, so that they can be utilized by
+  other packages.
+
+## Development Workflow
+
+### Development Environment
+
+- To initiate component development and test them in real time, run `yarn storybook` to start the development server
+  that will listen for changes within `src/stories`.
+- Execute `yarn watch` for continuous compilation of new package files, generating necessary Tailwind CSS styles, and
+  dynamically reflecting changes to UI components.

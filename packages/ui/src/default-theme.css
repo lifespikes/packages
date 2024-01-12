@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
+    --radius: 0.5rem;
+    --success: 120 100% 27.1%;
+    --success-foreground: 0, 0%, 100%;
+
+    /* BRAND VARIABLES */
+
+    --brand-purple-50: #ece9ff;
+    --brand-purple-100: #c7c0f6;
+    --brand-purple-200: #a196ea;
+    --brand-purple-300: #7c6be0;
+    --brand-purple-400: #5641d6;
+    --brand-purple-500: #3e28bd;
+    --brand-purple-600: #2f1f94; /* "PRIMARY PURPLE */
+    --brand-purple-700: #22166a;
+    --brand-purple-800: #130c42;
+    --brand-purple-900: #07031b;
+
+    --brand-orange-50: #ffe7df;
+    --brand-orange-100: #ffbfb1;
+    --brand-orange-200: #ff957f;
+    --brand-orange-300: #ff6c4d; /* "PRIMARY ORANGE */
+    --brand-orange-400: #fe431b;
+    --brand-orange-500: #e52b02;
+    --brand-orange-600: #b32000;
+    --brand-orange-700: #811600;
+    --brand-orange-800: #4f0b00;
+    --brand-orange-900: #200100;
+
+    --brand-yellow-50: #fff8dd;
+    --brand-yellow-100: #ffeab0;
+    --brand-yellow-200: #ffdb80;
+    --brand-yellow-300: #ffcd4f; /* "PRIMARY YELLOW */
+    --brand-yellow-400: #febf21;
+    --brand-yellow-500: #e5a60c;
+    --brand-yellow-600: #b38104;
+    --brand-yellow-700: #805c00;
+    --brand-yellow-800: #4d3700;
+    --brand-yellow-900: #1d1100;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346.8 77.2% 49.8%;
+    --success: 120 100% 27.1%;
+    --success-foreground: 0, 0%, 100%;
+  }
+}
+
+/*
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+*/
