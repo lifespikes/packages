@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import v from 'voca';
-import { UsesHints } from '@lifespikes/ui//types/global';
+import { UsesHints } from '@lifespikes/ui/types/global';
 import dayjs from 'dayjs';
 import localeDate from 'dayjs/plugin/localeData';
 import es from 'dayjs/locale/es';

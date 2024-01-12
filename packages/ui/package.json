@@ -1,5 +1,7 @@
 {
   "name": "@lifespikes/ui",
+  "description": "Lifespikes ui",
+  "license": "MIT",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -8,5 +10,17 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "keywords": [
+    "shadcn",
+    "lifespikes"
+  ],
+  "bugs": {
+    "url": "https://github.com/lifespikes/packages/issues"
+  },
+  "homepage": "https://github.com/lifespikes/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifespikes/packages.git"
   }
 }
