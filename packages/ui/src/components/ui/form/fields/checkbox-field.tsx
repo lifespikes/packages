@@ -5,7 +5,7 @@ import {
   Checkbox,
   CheckboxProps,
   FormField,
-  FormFieldType,
+  FormFieldType
 } from '@lifespikes/ui/components/ui';
 
 export interface CheckboxFieldProps<
@@ -19,24 +19,22 @@ export const CheckBoxField = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
-  _checkbox,
-  ...props
-}: CheckboxFieldProps<TFieldValues, TName>) => {
+    _checkbox,
+    ...props
+  }: CheckboxFieldProps<TFieldValues, TName>) => {
   return (
     <FormField
       {...props}
       render={({ field, label, fieldContext }) => {
         return (
-          <>
-            <Checkbox
-              {...field}
-              {..._checkbox}
-              checked={field.value}
-              onCheckedChange={field.onChange}
-              label={label}
-              id={fieldContext.formItemId}
-            />
-          </>
+          <Checkbox
+            {...field}
+            {..._checkbox}
+            checked={field.value}
+            onCheckedChange={field.onChange}
+            label={label}
+            id={fieldContext.formItemId}
+          />
         );
       }}
     />

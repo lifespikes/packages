@@ -17,11 +17,6 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const CopyPaste: Story = {
-  render: (args) => (
-    <Input aria-describedby="A11y" placeholder="Your placeholder goes here." />
-  ),
-};
 
 export const WithLeadingIcon: Story = {
   render: (args) => (

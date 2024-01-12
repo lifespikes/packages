@@ -22,14 +22,14 @@ const Form = FormProvider;
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
   name: TName;
 };
 
 export type RenderContext<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
   field: ControllerRenderProps<TFieldValues, TName>;
   fieldState: ControllerFieldState;
@@ -41,7 +41,7 @@ export type RenderContext<
 
 export type FormFieldProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
   render: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
   label?: string;
@@ -49,18 +49,18 @@ export type FormFieldProps<
 
 export type FormFieldType<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = Omit<FormFieldProps<TFieldValues, TName>, 'render'> & {
   _label?: React.ComponentPropsWithoutRef<typeof FormLabel>;
 };
 
 const FormFieldContext = React.createContext<FormFieldContextValue>(
-  {} as FormFieldContextValue,
+  {} as FormFieldContextValue
 );
 
 const FormFieldWrapper = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >(props: {
   context: Omit<
     RenderContext<TFieldValues, TName>,
@@ -75,30 +75,26 @@ const FormFieldWrapper = <
 
   const fieldContext = useFormField();
 
-  return (
-    <>
-      {props.render?.({
-        ...props.context,
-        fieldContext,
-        label: defaultLabel,
-        labelFromName,
-      })}
-    </>
-  );
+  return props.render?.({
+    ...props.context,
+    fieldContext,
+    label: defaultLabel,
+    labelFromName,
+  });
 };
 
 const FormField = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   label,
   ...props
 }: FormFieldProps<TFieldValues, TName>) => {
-  const { control, getValues, getFieldState } = useFormContext<TFieldValues>();
+  const { control } = useFormContext<TFieldValues>();
 
   if (!props.name) {
     throw new Error(
-      'The name property in the FormField component is required.',
+      'The name property in the FormField component is required.'
     );
   }
 
@@ -155,7 +151,7 @@ type FormItemContextValue = {
 };
 
 const FormItemContext = React.createContext<FormItemContextValue>(
-  {} as FormItemContextValue,
+  {} as FormItemContextValue
 );
 
 const FormItem = React.forwardRef<

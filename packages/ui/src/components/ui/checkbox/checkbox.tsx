@@ -26,7 +26,8 @@ export const Checkbox = ({
   label,
   ...props
 }: CheckboxProps) => {
-  const id = props.id ?? useId();
+  const _id = useId()
+  const id = props.id ?? _id;
   return (
     <div
       {..._containerProps}

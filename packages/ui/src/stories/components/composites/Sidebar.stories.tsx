@@ -1,20 +1,16 @@
-import {
-  Sidebar,
-  SidebarItem
-} from '@lifespikes/ui/components/composites';
+import { Sidebar, SidebarItem } from '@lifespikes/ui/components/composites';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
 import {
   BuildingIcon,
   CreditCardIcon,
-  FileCheck,
   Folder,
   GripIcon,
   HomeIcon,
   LogOut,
   PercentCircle,
   SettingsIcon,
-  UsersIcon
+  UsersIcon,
 } from 'lucide-react';
 
 export const sidebarItems: SidebarItem[] = [
@@ -22,7 +18,7 @@ export const sidebarItems: SidebarItem[] = [
     label: 'Dashboard',
     href: '#',
     icon: HomeIcon,
-    current: true
+    current: true,
   },
   {
     label: 'Companies',
@@ -33,43 +29,43 @@ export const sidebarItems: SidebarItem[] = [
         label: 'List of Companies',
         href: '#',
         icon: MixerHorizontalIcon,
-        current: false
-      }
+        current: false,
+      },
     ],
-    current: false
+    current: false,
   },
   { label: 'Employees', href: '#', icon: UsersIcon, current: false },
   {
     label: 'Time & Attendance',
     href: '#',
     icon: MixerHorizontalIcon,
-    current: false
+    current: false,
   },
   { label: 'Billing', href: '#', icon: CreditCardIcon, current: false },
   {
     label: 'Taxes & Compliances',
     href: '#',
     icon: PercentCircle,
-    current: false
+    current: false,
   },
   {
     label: 'Reports',
     href: '#',
     icon: Folder,
-    current: false
+    current: false,
   },
   {
     label: 'Apps',
     href: '#',
     icon: GripIcon,
-    current: false
+    current: false,
   },
   {
     label: 'Settings',
     href: '#',
     icon: SettingsIcon,
-    current: false
-  }
+    current: false,
+  },
 ];
 
 const meta = {

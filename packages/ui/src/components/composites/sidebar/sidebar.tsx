@@ -110,7 +110,7 @@ const SidebarListItem: FC<SidebarItem> = (item) => {
 
 const SidebarList: FC<SidebarListProps> = ({ items, className }) => {
   return (
-    <ul role="list" className={cn('-mx-2 space-y-1', className)}>
+    <ul className={cn('-mx-2 space-y-1', className)}>
       {items.map((item, idx) => (
         <li key={item.id ?? idx}>
           <SidebarListItem {...item} />
@@ -155,29 +155,27 @@ export const Sidebar = React.forwardRef<SidebarRefType, SidebarProps>(
     );
 
     const navigationContent = (
-      <>
-        <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-background px-6 pb-4">
-          <div className="flex h-16 shrink-0 items-center">
-            {renderLogo ? (
-              renderLogo()
-            ) : (
-              <img className="h-8 w-auto" src={logo} alt="Your Company" />
-            )}
-          </div>
-          <nav className="flex flex-1 flex-col">
-            <ul role="list" className="flex flex-1 flex-col gap-y-7 mt-4">
-              <li>
-                <SidebarList items={filteredItems} />
-              </li>
-              {bottomItem ? (
-                <li className="mt-auto">
-                  <SidebarListItem {...bottomItem} />
-                </li>
-              ) : null}
-            </ul>
-          </nav>
+      <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-background px-6 pb-4">
+        <div className="flex h-16 shrink-0 items-center">
+          {renderLogo ? (
+            renderLogo()
+          ) : (
+            <img className="h-8 w-auto" src={logo} alt="Your Company" />
+          )}
         </div>
-      </>
+        <nav className="flex flex-1 flex-col">
+          <ul className="flex flex-1 flex-col gap-y-7 mt-4">
+            <li>
+              <SidebarList items={filteredItems} />
+            </li>
+            {bottomItem ? (
+              <li className="mt-auto">
+                <SidebarListItem {...bottomItem} />
+              </li>
+            ) : null}
+          </ul>
+        </nav>
+      </div>
     );
 
     return (

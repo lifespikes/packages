@@ -10,7 +10,7 @@ const Card = React.forwardRef<
     ref={ref}
     className={cn(
       'rounded-lg border bg-card text-card-foreground shadow-sm',
-      className,
+      className
     )}
     {...props}
   />
@@ -37,10 +37,10 @@ const CardTitle = React.forwardRef<
     ref={ref}
     className={cn(
       'text-xl font-semibold leading-none tracking-tight',
-      className,
+      className
     )}
     {...props}
-  />
+  >{props.children}</h3>
 ));
 CardTitle.displayName = 'CardTitle';
 
@@ -71,9 +71,9 @@ export const CardTitleWithIcon = React.forwardRef<
 export const CardTitleWithTwoIcons = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
-    iconLeft: React.ReactNode;
-    iconRight: React.ReactNode;
-  }
+  iconLeft: React.ReactNode;
+  iconRight: React.ReactNode;
+}
 >(({ className, ...props }, ref) => (
   <div className={'flex items-center justify-between'}>
     <div className="flex space-x-2 items-center">
@@ -112,5 +112,5 @@ export {
   CardFooter,
   CardTitle,
   CardDescription,
-  CardContent,
+  CardContent
 };

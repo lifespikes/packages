@@ -22,7 +22,7 @@ const meta = {
   title: 'Composites/Layout',
   component: ExampleLayout,
   args: {
-    children: <></>,
+    children: null,
   },
   parameters: {
     layout: 'centered',
