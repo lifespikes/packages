@@ -1,6 +1,6 @@
 import {
   Sidebar,
-  SidebarItem,
+  SidebarItem
 } from '@lifespikes/ui/components/composites';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MixerHorizontalIcon } from '@radix-ui/react-icons';
@@ -14,7 +14,7 @@ import {
   LogOut,
   PercentCircle,
   SettingsIcon,
-  UsersIcon,
+  UsersIcon
 } from 'lucide-react';
 
 export const sidebarItems: SidebarItem[] = [
@@ -22,7 +22,7 @@ export const sidebarItems: SidebarItem[] = [
     label: 'Dashboard',
     href: '#',
     icon: HomeIcon,
-    current: true,
+    current: true
   },
   {
     label: 'Companies',
@@ -33,49 +33,43 @@ export const sidebarItems: SidebarItem[] = [
         label: 'List of Companies',
         href: '#',
         icon: MixerHorizontalIcon,
-        current: false,
-      },
+        current: false
+      }
     ],
-    current: false,
+    current: false
   },
   { label: 'Employees', href: '#', icon: UsersIcon, current: false },
   {
     label: 'Time & Attendance',
     href: '#',
     icon: MixerHorizontalIcon,
-    current: false,
+    current: false
   },
   { label: 'Billing', href: '#', icon: CreditCardIcon, current: false },
-  {
-    label: 'Payroll',
-    href: '#',
-    icon: FileCheck,
-    current: false,
-  },
   {
     label: 'Taxes & Compliances',
     href: '#',
     icon: PercentCircle,
-    current: false,
+    current: false
   },
   {
     label: 'Reports',
     href: '#',
     icon: Folder,
-    current: false,
+    current: false
   },
   {
     label: 'Apps',
     href: '#',
     icon: GripIcon,
-    current: false,
+    current: false
   },
   {
     label: 'Settings',
     href: '#',
     icon: SettingsIcon,
-    current: false,
-  },
+    current: false
+  }
 ];
 
 const meta = {
@@ -83,16 +77,16 @@ const meta = {
   component: Sidebar,
   tags: ['autodocs'],
   args: {
-    logo: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600',
-  },
+    logo: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+  }
 } satisfies Meta<typeof Sidebar>;
 
 type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
   args: {
-    items: sidebarItems,
-  },
+    items: sidebarItems
+  }
 };
 
 export const WithItemToBottomPosition: Story = {
@@ -104,9 +98,9 @@ export const WithItemToBottomPosition: Story = {
         href: '#',
         icon: LogOut,
         current: false,
-        toBottomPosition: true,
-      },
-    ],
-  },
+        toBottomPosition: true
+      }
+    ]
+  }
 };
 export default meta;

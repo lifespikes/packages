@@ -3,6 +3,22 @@ const { join } = require('path');
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
+// Suppress Tailwind warnings
+// @ts-ignore
+delete colors.coolGray;
+
+// @ts-ignore
+delete colors.blueGray;
+
+// @ts-ignore
+delete colors.warmGray;
+
+// @ts-ignore
+delete colors.lightBlue;
+
+// @ts-ignore
+delete colors.trueGray;
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [

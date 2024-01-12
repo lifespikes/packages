@@ -1,7 +1,7 @@
 import {
   ModalAlert,
   ModalAlertDescription,
-  ModalAlertTitle,
+  ModalAlertTitle
 } from '@lifespikes/ui/components/ui/modal-alert/modal-alert';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -9,9 +9,9 @@ const meta = {
   title: 'Components/ModalAlert',
   component: ModalAlert,
   parameters: {
-    layout: 'centered',
+    layout: 'centered'
   },
-  tags: ['autodocs'],
+  tags: ['autodocs']
 } satisfies Meta<typeof ModalAlert>;
 
 export default meta;
@@ -29,8 +29,8 @@ export const Info: Story = {
     </ModalAlert>
   ),
   args: {
-    variant: 'info',
-  },
+    variant: 'info'
+  }
 };
 
 export const Warning: Story = {
@@ -38,14 +38,13 @@ export const Warning: Story = {
     <ModalAlert {...args}>
       <ModalAlertTitle>Contratulations!</ModalAlertTitle>
       <ModalAlertDescription>
-        We have successfully created your account. You can now start using
-        Payroll.
+        hi
       </ModalAlertDescription>
     </ModalAlert>
   ),
   args: {
-    variant: 'success',
-  },
+    variant: 'success'
+  }
 };
 
 export const Error: Story = {
@@ -59,6 +58,6 @@ export const Error: Story = {
     </ModalAlert>
   ),
   args: {
-    variant: 'error',
-  },
+    variant: 'error'
+  }
 };

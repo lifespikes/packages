@@ -29,13 +29,11 @@ export const Example: Story = {
           <TabsTrigger value="password">Company Locations</TabsTrigger>
           <TabsTrigger value="settings">Billing</TabsTrigger>
           <TabsTrigger value="employees">Employees</TabsTrigger>
-          <TabsTrigger value="payrolls">Payrolls</TabsTrigger>
         </TabsList>
         <TabsContent value="account"></TabsContent>
         <TabsContent value="password"></TabsContent>
         <TabsContent value="settings"></TabsContent>
         <TabsContent value="employees"></TabsContent>
-        <TabsContent value="payrolls"></TabsContent>
       </Tabs>
     );
   },
