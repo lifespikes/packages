@@ -3,14 +3,14 @@ import * as React from 'react';
 import {
   FormField,
   FormFieldType,
-  FormLabel,
+  FormLabel
 } from '@lifespikes/ui/components/ui';
 import {
   AddressForm,
   AddressFormProps,
   AddressObject,
   Autocomplete,
-  AutocompleteProps,
+  AutocompleteProps
 } from '@lob/react-address-autocomplete';
 import { PropsWithChildren, useEffect, useState } from 'react';
 
@@ -40,19 +40,19 @@ const Render = ({ value, children }: PropsWithChildren & { value: any }) => {
     }, 1);
   }, [value]);
 
-  return show ? <>{children}</> : null;
+  return show ? children : null;
 };
 
 export const AddressInputField = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
-  mode = 'autocomplete',
-  apiKey,
-  _autocomplete,
-  _addressForm,
-  ...props
-}: AddressInputFieldProps<TFieldValues, TName>) => {
+    mode = 'autocomplete',
+    apiKey,
+    _autocomplete,
+    _addressForm,
+    ...props
+  }: AddressInputFieldProps<TFieldValues, TName>) => {
   return (
     <FormField
       {...props}
@@ -79,18 +79,18 @@ export const AddressInputField = <
                   control: () => 'dark:bg-background !bg-background',
                   menu: () => 'dark:bg-background !bg-background ',
                   option: () => '!text-primary',
-                  input: () => '!text-primary-foreground',
+                  input: () => '!text-primary-foreground'
                 }}
                 styles={{
                   option(styles, { data }) {
                     // remove lob label
                     if ((data as any).value === 'lob-label') {
                       return {
-                        display: 'none',
+                        display: 'none'
                       };
                     }
                     return styles;
-                  },
+                  }
                 }}
               />
             ) : (

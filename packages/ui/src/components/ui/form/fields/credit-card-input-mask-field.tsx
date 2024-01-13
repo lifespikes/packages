@@ -6,18 +6,19 @@ import {
   FormLabel,
   Input,
   InputFieldProps,
-  RenderContext,
+  RenderContext
 } from '@lifespikes/ui/components/ui';
 
 export interface CreditCardInputMaskFieldProps<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> extends InputFieldProps<TFieldValues, TName> {}
+> extends InputFieldProps<TFieldValues, TName> {
+}
 
 const Wrapper: FC<
   Pick<RenderContext<any>, 'field' | 'fieldContext' | 'label'> & {
-    id?: string;
-  }
+  id?: string;
+}
 > = ({ label, fieldContext, field, ...props }) => {
   const mask = useMemo(() => {
     return /^3[47]/.test(field.value)
@@ -43,21 +44,19 @@ export const CreditCardInputMaskField = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
-  ...props
-}: CreditCardInputMaskFieldProps<TFieldValues, TName>) => {
+    ...props
+  }: CreditCardInputMaskFieldProps<TFieldValues, TName>) => {
   return (
     <FormField
       {...props}
       render={({ field, fieldContext, label }) => {
         return (
-          <>
-            <Wrapper
-              field={field as any}
-              label={label}
-              fieldContext={fieldContext}
-              {...props}
-            />
-          </>
+          <Wrapper
+            field={field as any}
+            label={label}
+            fieldContext={fieldContext}
+            {...props}
+          />
         );
       }}
     />

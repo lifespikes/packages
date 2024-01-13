@@ -44,13 +44,13 @@ export const Test: Story = {
     const Tab1 = () => {
       console.log('test');
 
-      return <></>;
+      return null;
     };
 
     const Tab2 = () => {
       console.log('test');
 
-      return <></>;
+      return null;
     };
     return (
       <Tabs defaultValue="account" className="w-[400px]">

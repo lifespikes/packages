@@ -9,8 +9,7 @@ import { Check } from 'lucide-react';
 const STEPS_NAME = 'Steps';
 
 type ScopedProps<P> = P & { __scopeSteps?: Scope };
-const [createStepperContext, createStepperScope] =
-  createContextScope(STEPS_NAME);
+const [createStepperContext] = createContextScope(STEPS_NAME);
 
 type StepsContextValue = StepsProps;
 
@@ -18,7 +17,7 @@ export const [StepsProvider, useStepsContext] =
   createStepperContext<StepsContextValue>(STEPS_NAME);
 export const useStepperContext = (
   consumerName: string,
-  scope: Scope<StepsContextValue | undefined>,
+  scope: Scope<StepsContextValue | undefined>
 ) => useStepsContext(consumerName, scope);
 
 // Steps
@@ -42,7 +41,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
           className={cn(
             'items-center h-full flex justify-between',
             props.isVertical ? 'flex-col space-y-2' : 'flex-row space-x-2',
-            className,
+            className
           )}
         >
           {React.Children.map(children, (child, i) => {
@@ -65,7 +64,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
         </div>
       </StepsProvider>
     );
-  },
+  }
 );
 Steps.displayName = 'Steps';
 
@@ -84,7 +83,7 @@ export type StepAndStatusProps = StepProps & StepStatus;
 export const Step = React.forwardRef<HTMLDivElement, StepAndStatusProps>(
   (
     props: ScopedProps<StepAndStatusProps>,
-    ref: React.ForwardedRef<HTMLDivElement>,
+    ref: React.ForwardedRef<HTMLDivElement>
   ) => {
     const {
       __scopeSteps,
@@ -103,7 +102,7 @@ export const Step = React.forwardRef<HTMLDivElement, StepAndStatusProps>(
           <div
             className={cn(
               'items-center flex',
-              isVertical ? 'flex-col space-y-2' : 'flex-row space-x-2',
+              isVertical ? 'flex-col space-y-2' : 'flex-row space-x-2'
             )}
           >
             <div>
@@ -138,14 +137,14 @@ export const Step = React.forwardRef<HTMLDivElement, StepAndStatusProps>(
               {
                 'min-h-[20px]': isVertical,
                 'min-w-[20px]': !isVertical,
-              },
+              }
             )}
             orientation={isVertical ? 'vertical' : 'horizontal'}
           />
         )}
       </>
     );
-  },
+  }
 );
 
 Step.displayName = 'Step';
@@ -155,71 +154,3 @@ export type StepLabelProps = {
   label: string | React.ReactNode;
   description?: string | React.ReactNode;
 };
-
-// const StepLabel = ({
-//   isCurrentStep,
-//   label,
-//   description,
-//   __scopeSteps,
-// }: StepLabelProps & ScopedProps<StepLabelProps> & { isCurrentStep?: boolean }) => {
-//   const {orientation} = useStepperContext(STEPS_NAME, __scopeSteps);
-//   const shouldRender = !!label || !!description;
-//   const shouldRenderOptionalLabel = !!optional && !!optionalLabel;
-//
-//   return shouldRender ? (
-//     <div
-//       aria-current={isCurrentStep ? "step" : undefined}
-//       className={cn(
-//         "flex w-max flex-col justify-center",
-//         isLabelVertical ? "items-center text-center" : "items-start text-left"
-//       )}
-//     >
-//       {!!label && (
-//         <p>
-//           {label}
-//           {shouldRenderOptionalLabel && (
-//             <span className="ml-1 text-xs text-muted-foreground">
-//               ({optionalLabel})
-//             </span>
-//           )}
-//         </p>
-//       )}
-//       {!!description && (
-//         <p className="text-sm text-muted-foreground">{description}</p>
-//       )}
-//     </div>
-//   ) : null;
-// }
-// StepLabel.displayName = "StepLabel";
-
-// Connector
-type ConnectorProps = React.HTMLAttributes<HTMLDivElement> & {
-  isCompletedStep: boolean;
-  isLastStep?: boolean | null;
-  hasLabel?: boolean;
-  index: number;
-};
-
-const Connector = React.memo(
-  ({
-    isCompletedStep,
-    isLastStep,
-    __scopeSteps,
-  }: ConnectorProps & ScopedProps<ConnectorProps>) => {
-    const { isVertical } = useStepperContext(STEPS_NAME, __scopeSteps);
-
-    if (isLastStep) {
-      return null;
-    }
-
-    return (
-      <Separator
-        data-highlighted={isCompletedStep}
-        className="flex h-[2px] min-h-[auto] flex-1 self-auto data-[highlighted=true]:bg-green-700"
-        orientation={isVertical ? 'vertical' : 'horizontal'}
-        decorative
-        style={{ width: '2px' }}
-      />
-    );
-  },
-);

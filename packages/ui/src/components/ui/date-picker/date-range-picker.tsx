@@ -5,17 +5,8 @@ import { Calendar as CalendarIcon } from 'lucide-react';
 import { cn } from '@lifespikes/ui/lib/utils';
 import { Button } from '@lifespikes/ui/components/ui/button';
 import { Calendar } from '@lifespikes/ui/components/ui/calendar';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@lifespikes/ui/components/ui/popover';
-import {
-  DateRange,
-  DayPickerRangeProps,
-  SelectRangeEventHandler,
-} from 'react-day-picker';
-import { DatePickerProps } from '@lifespikes/ui/components/ui/date-picker/date-picker';
+import { Popover, PopoverContent, PopoverTrigger } from '@lifespikes/ui/components/ui/popover';
+import { DateRange, DayPickerRangeProps, SelectRangeEventHandler } from 'react-day-picker';
 
 export type DateRangePickerProps = Omit<DayPickerRangeProps, 'mode'> & {
   selectedDate?: DateRange;

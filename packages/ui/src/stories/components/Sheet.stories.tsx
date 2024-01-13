@@ -68,8 +68,6 @@ export const Simple: Story = {
 
 const SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const;
 
-type SheetSide = (typeof SHEET_SIDES)[number];
-
 export const WithPositions: Story = {
   render() {
     return (

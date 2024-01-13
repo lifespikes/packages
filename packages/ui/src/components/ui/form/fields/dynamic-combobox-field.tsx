@@ -1,8 +1,5 @@
-import {
-  ComboboxField,
-  ComboboxFieldProps,
-} from '@lifespikes/ui/components/ui/form/fields/combobox-field';
-import { useEffect, useMemo, useState } from 'react';
+import { ComboboxField, ComboboxFieldProps } from '@lifespikes/ui/components/ui/form/fields/combobox-field';
+import { useMemo, useState } from 'react';
 import { ComboboxOptions } from '@lifespikes/ui/components/ui';
 
 export type DynamicComboboxFieldProps<T extends (...args: any) => any> = Omit<
@@ -28,12 +25,13 @@ export const DynamicComboboxField = <T extends (...args: any) => any>({
   onChangeInput,
   ...props
 }: DynamicComboboxFieldProps<T>) => {
-  const { data, isLoading, error } = useQueryFn();
+  const { data} = useQueryFn();
   const [input, setInput] = useState('');
 
-  useEffect(() => {
-    if (onChangeInput) onChangeInput(input);
-  }, [input]);
+  const handleChange = (value:string)=>{
+    onChangeInput?.(value)
+    setInput(value)
+  }
 
   const comboboxOptions = useMemo(() => {
     if (!data) return [];
@@ -47,7 +45,7 @@ export const DynamicComboboxField = <T extends (...args: any) => any>({
     <ComboboxField
       options={comboboxOptions}
       name={name}
-      _commandInputProps={{ value: input, onValueChange: setInput }}
+      _commandInputProps={{ value: input, onValueChange: handleChange }}
       _commandProps={{ shouldFilter: false }}
       {...props}
     />

@@ -91,5 +91,5 @@ export const useGetNextTableState = () => {
       sort: mapSort(parseData.sorting ?? []),
       visibility,
     };
-  }, [pagination, filter, sorting]);
+  }, [pagination, filter, sorting, visibility]);
 };
