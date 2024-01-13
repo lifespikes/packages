@@ -117,6 +117,7 @@
     "postcss": "^8.4.31",
     "prettier": "^2.6.2",
     "replace-json-property": "^1.9.0",
+    "semantic-release": "^23.0.0",
     "storybook": "^7.5.1",
     "tailwindcss": "^3.3.3",
     "ts-jest": "^29.1.0",
