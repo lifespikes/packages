@@ -14,7 +14,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/ui"
+        "outputPath": "dist/packages/ui",
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {

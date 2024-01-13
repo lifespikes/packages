@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "ui:publish": "nx build ui && cd dist/packages/ui &&npm publish --access=public"
+    "ui:publish": "nx build ui && cd dist/packages/ui && npm publish --access=public"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
