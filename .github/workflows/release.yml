@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v4
         with:
           fetch-depth: 0
+          node-version: '>=20.8.1'
       - uses: nrwl/nx-set-shas@v3
       - name: Install deps
         run: |
