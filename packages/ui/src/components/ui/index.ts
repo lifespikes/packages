@@ -33,3 +33,7 @@ export * from './combobox';
 export * from './command';
 export * from './badge';
 export * from './combobox';
+export * from './resizable';
+export * from './drawer';
+export * from './carousel';
+export * from './navigation-menu';
