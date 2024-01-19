@@ -10,7 +10,7 @@
     "cssVariables": true
   },
   "aliases": {
-    "components": "@lifespikes/ui/components",
+    "components": "@lifespikes/ui/components/ui",
     "utils": "@lifespikes/ui/lib/utils"
   }
 }
