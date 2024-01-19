@@ -75,6 +75,12 @@
           "buildTarget": "ui:build-storybook:ci"
         }
       }
+    },
+    "release": {
+      "executor": "nx-release:build-update-publish",
+      "options": {
+        "libName": "ui"
+      }
     }
   }
 }

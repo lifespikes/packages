@@ -27,5 +27,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lifespikes/packages.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
