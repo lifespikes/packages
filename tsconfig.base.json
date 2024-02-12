@@ -19,8 +19,8 @@
       "@lifespikes/next-datatable/server": [
         "packages/next-datatable/src/server.ts"
       ],
-      "@lifespikes/ui/*": ["packages/ui/src/*"],
       "@lifespikes/ui": ["packages/ui/src/index.ts"],
+      "@lifespikes/ui/*": ["packages/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

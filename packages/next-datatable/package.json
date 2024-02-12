@@ -1,12 +1,17 @@
 {
   "name": "@lifespikes/next-datatable",
   "version": "0.0.1",
+  "description": "Datatable made with Shadcn, which can support server-side pagination and can synchronize its state with the url",
+  "author": "santigp258",
   "keywords": [
     "shadcn",
     "lifespikes",
     "react-table",
     "nextjs"
   ],
+  "dependencies": {
+    "@lifespikes/ui": "1.0.0"
+  },
   "bugs": {
     "url": "https://github.com/lifespikes/packages/issues"
   },
