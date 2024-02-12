@@ -1,0 +1,21 @@
+{
+  "name": "@lifespikes/next-datatable",
+  "version": "0.0.1",
+  "keywords": [
+    "shadcn",
+    "lifespikes",
+    "react-table",
+    "nextjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/lifespikes/packages/issues"
+  },
+  "homepage": "https://github.com/lifespikes/packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifespikes/packages.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
