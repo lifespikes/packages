@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lifespikes/ui/*": ["packages/ui/src/*"]
+      "@lifespikes/next-datatable": ["packages/next-datatable/src/index.ts"],
+      "@lifespikes/next-datatable/server": [
+        "packages/next-datatable/src/server.ts"
+      ],
+      "@lifespikes/ui/*": ["packages/ui/src/*"],
+      "@lifespikes/ui": ["packages/ui/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

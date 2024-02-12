@@ -1,7 +1,4 @@
-import {
-  DataTable,
-  DataTableProps
-} from '@lifespikes/ui/components/composites/data-table';
+import { DataTable, DataTableProps } from '@lifespikes/ui';
 import { useNextTableStateInternal } from './_use-next-table-state_internal';
 
 export const NextDataTable = <D extends Record<any, any>>(
@@ -16,7 +13,7 @@ export const NextDataTable = <D extends Record<any, any>>(
     setColumnVisibility,
     setSorting,
     setColumnFilters,
-    isLoading
+    isLoading,
   } = useNextTableStateInternal();
 
   const _loading = props.isLoading || isLoading;
@@ -32,12 +29,12 @@ export const NextDataTable = <D extends Record<any, any>>(
           pagination,
           sorting,
           columnVisibility,
-          columnFilters
+          columnFilters,
         },
         onSortingChange: setSorting,
         onPaginationChange: setPagination,
         onColumnVisibilityChange: setColumnVisibility,
-        onColumnFiltersChange: setColumnFilters
+        onColumnFiltersChange: setColumnFilters,
       }}
       isLoading={_loading}
     />

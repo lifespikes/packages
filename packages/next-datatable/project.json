@@ -1,0 +1,47 @@
+{
+  "name": "next-datatable",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/next-datatable/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/next-datatable",
+        "tsConfig": "packages/next-datatable/tsconfig.lib.json",
+        "project": "packages/next-datatable/package.json",
+        "entryFile": "packages/next-datatable/src/index.ts",
+        "external": [
+          "react",
+          "react-dom",
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/next-datatable/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "release": {
+      "executor": "nx-release:build-update-publish",
+      "options": {
+        "libName": "next-datatable"
+      }
+    }
+  }
+}
