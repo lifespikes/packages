@@ -1,3 +1,17 @@
+## [1.1.0](https://github.com/lifespikes/packages/compare/v1.0.0...v1.1.0) (2024-02-12)
+
+
+### Features
+
+* create next-datatable package ([a1c292f](https://github.com/lifespikes/packages/commit/a1c292fd35999426d06c3389a0b960cc3b2f1f7b))
+
+
+### Chores
+
+* more changes ([815fcde](https://github.com/lifespikes/packages/commit/815fcde668fb3fcf83dfa5912e2a7da8207f4b6f))
+* **next-datatable:** update options ([ba350a4](https://github.com/lifespikes/packages/commit/ba350a4807571325bcc9a13853d4f192a75c6ccb))
+* update README.md ([b9a78f6](https://github.com/lifespikes/packages/commit/b9a78f6b2a7f1e9ed037e1e0ae6027ff75421748))
+
 ## 1.0.0 (2024-01-19)
 
 
