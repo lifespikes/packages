@@ -8,7 +8,7 @@ import {
   getCoreRowModel,
   Table as TableType,
   TableOptions,
-  useReactTable
+  useReactTable,
 } from '@tanstack/react-table';
 import {
   Table,
@@ -17,7 +17,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-  TableVariantProps
+  TableVariantProps,
 } from '@lifespikes/ui/components';
 import { DataTablePagination } from '@lifespikes/ui/components/composites';
 import { ChevronDown, ChevronUp } from 'lucide-react';
@@ -58,15 +58,15 @@ export const DataTableLoading: FC<WithTable> = ({ table }) => {
 };
 
 export const DataTable = <D extends Record<any, any>>({
-                                                        data,
-                                                        columns,
-                                                        tableOptions,
-                                                        renderHeader,
-                                                        renderFooter,
-                                                        variant,
-                                                        variantClassName,
-                                                        isLoading
-                                                      }: DataTableProps<D>) => {
+  data,
+  columns,
+  tableOptions,
+  renderHeader,
+  renderFooter,
+  variant,
+  variantClassName,
+  isLoading,
+}: DataTableProps<D>) => {
   const table = useReactTable({
     data,
     columns,
@@ -74,8 +74,8 @@ export const DataTable = <D extends Record<any, any>>({
     //getPaginationRowModel: getPaginationRowModel(),
     ...tableOptions,
     state: {
-      ...tableOptions?.state
-    }
+      ...tableOptions?.state,
+    },
   });
 
   return (
@@ -101,9 +101,9 @@ export const DataTable = <D extends Record<any, any>>({
                         {header.isPlaceholder
                           ? null
                           : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
                         {sort ? (
                           sort === 'asc' ? (
                             <ChevronUp className="w-4 h-4" />
