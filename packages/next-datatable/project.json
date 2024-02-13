@@ -25,7 +25,8 @@
           "react",
           "react-dom",
           "react/jsx-runtime",
-          "nuqs"
+          "nuqs",
+          "next"
         ],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "swc",
