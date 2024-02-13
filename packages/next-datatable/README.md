@@ -110,7 +110,7 @@ const UsersTable = () => {
 };
 ```
 
-Check this [example app](../../apps/frontend/app/next-datatable-example.tsx)
+Check this [example app](https://github.com/lifespikes/packages/blob/main/apps/frontend/app/next-datatable-example.tsx)
 
 
 
