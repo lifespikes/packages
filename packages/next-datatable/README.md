@@ -97,10 +97,11 @@ const UsersTable = () => {
   return (
     <NextDataTable
       data={data}
+      pageCount={data?.totalPages}
       defaultValues={{
         pagination: {
           pageIndex: data?.page - 1,
-          pageSize: data?.perPage
+          pageSize: 10
         }
       }}
       columns={columns}
@@ -108,6 +109,8 @@ const UsersTable = () => {
   );
 };
 ```
+
+Check this [example app](https://github.com/lifespikes/packages/blob/main/apps/frontend/app/next-datatable-example.tsx)
 
 
 

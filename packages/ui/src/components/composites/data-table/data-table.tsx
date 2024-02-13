@@ -70,7 +70,6 @@ export const DataTable = <D extends Record<any, any>>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-    //getPaginationRowModel: getPaginationRowModel(),
     ...tableOptions,
     state: {
       ...tableOptions?.state,

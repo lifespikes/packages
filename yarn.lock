@@ -2948,6 +2948,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:~0.34.6"
     "@vitest/ui": "npm:~0.34.6"
     autoprefixer: "npm:^10.4.16"
+    babel-jest: "npm:^29.4.1"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.0.0"
     cmdk: "npm:^0.2.0"
@@ -9864,7 +9865,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^29.7.0":
+"babel-jest@npm:^29.4.1, babel-jest@npm:^29.7.0":
   version: 29.7.0
   resolution: "babel-jest@npm:29.7.0"
   dependencies:
