@@ -29,7 +29,7 @@ const response = {
   },
 };
 
-export const columns: ColumnDef<any>[] = [
+export const columns: ColumnDef<(typeof response)['data'][number]>[] = [
   {
     id: 'select',
     header: ({ table }) => (
