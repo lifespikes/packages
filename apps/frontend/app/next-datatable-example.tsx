@@ -55,26 +55,50 @@ export const columns: ColumnDef<(typeof response)['data'][number]>[] = [
     header: 'Id',
   },
   {
-    accessorKey: 'name',
-    header: 'Name',
-    cell: ({ row }) => (
-      <div className="flex space-x-2 text-primary">
-        <span>{row.getValue('name')}</span>
-      </div>
-    ),
+    accessorKey: 'title',
+    header: 'Title',
+  },
+  {
+    accessorKey: 'description',
+    header: 'Description',
   },
 ];
 
-const request = (page: number): Promise<typeof response> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(response);
-    }, 1000);
-  });
+export interface DummyApiResponse {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
+export interface Product {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  thumbnail: string;
+  images: string[];
+}
+
+/** @see https://dummyjson.com/docs/products */
+const request = async (
+  page: number,
+  perPage = 10
+): Promise<DummyApiResponse> => {
+  const response = await fetch(
+    `https://dummyjson.com/products?limit=${perPage}&skip=${
+      (page - 1) * perPage
+    }`
+  );
+  return response.json();
 };
 
 const NextDatatableExample = () => {
-  const [data, setData] = useState<null | typeof response>(null);
+  const [data, setData] = useState<DummyApiResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const { pagination } = useGetNextTableState();
@@ -82,10 +106,15 @@ const NextDatatableExample = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      setData(await request(pagination.pageIndex + 1));
+      const data = await request((pagination?.pageIndex ?? 0) + 1);
+      setData(data);
       setIsLoading(false);
     })();
   }, [pagination]);
+
+  const totalPages = Math.ceil(
+    (data?.total ?? 0) / (pagination?.pageSize ?? 10)
+  );
 
   return (
     <Card>
@@ -97,12 +126,12 @@ const NextDatatableExample = () => {
         <NextDataTable
           defaultValues={{
             pagination: {
-              pageSize: data?.meta?.perPage ?? 1,
-              pageIndex: (data?.meta?.currentPage ?? 1) - 1,
+              pageSize: data?.limit ?? 10,
+              pageIndex: (data?.skip ?? 1) - 1,
             },
           }}
-          pageCount={data?.meta?.totalPages}
-          data={data?.data ?? []}
+          pageCount={totalPages}
+          data={data?.products ?? []}
           columns={columns}
           isLoading={isLoading}
         />
