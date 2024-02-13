@@ -24,7 +24,8 @@
         "external": [
           "react",
           "react-dom",
-          "react/jsx-runtime"
+          "react/jsx-runtime",
+          "nuqs"
         ],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "compiler": "swc",

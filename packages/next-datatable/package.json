@@ -9,8 +9,8 @@
     "react-table",
     "nextjs"
   ],
-  "dependencies": {
-    "@lifespikes/ui": "1.0.0"
+  "peerDependencies": {
+    "@lifespikes/ui": "*"
   },
   "bugs": {
     "url": "https://github.com/lifespikes/packages/issues"
