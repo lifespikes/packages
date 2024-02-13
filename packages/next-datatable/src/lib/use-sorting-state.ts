@@ -1,10 +1,10 @@
 import { SortingState } from '@tanstack/react-table';
 import { useQueryDatatable } from './use-query-datatable';
 
-export const useSortingState = () => {
+export const useSortingState = (defaultState?: SortingState) => {
   const [sorting, setSorting, isLoading] = useQueryDatatable<SortingState>(
     'sorting',
-    { defaultValue: [] },
+    { defaultValue: defaultState ?? [] }
   );
 
   return { sorting, setSorting, isLoading };

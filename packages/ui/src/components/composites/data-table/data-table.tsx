@@ -32,13 +32,12 @@ export type RenderComponentDataTableHandler = (context: WithTable) => ReactNode;
 export interface DataTableProps<D extends Record<any, any>>
   extends TableVariantProps {
   data: D[];
-  columns: ColumnDef<D>[];
+  columns: ColumnDef<any>[];
   tableOptions?: Partial<TableOptions<Record<any, any>>>;
   renderHeader?: RenderComponentDataTableHandler;
   renderFooter?: RenderComponentDataTableHandler;
   variantClassName?: string;
   isLoading?: boolean;
-  pageCount?: number;
 }
 
 export const DataTableLoading: FC<WithTable> = ({ table }) => {
