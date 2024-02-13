@@ -20,7 +20,7 @@ export const mapSort = (sort: SortingState) => {
 export function safeParse<T>(
   parser: Parser<T>['parse'],
   value: string,
-  key?: string,
+  key?: string
 ) {
   try {
     return parser(value);
@@ -30,7 +30,7 @@ export function safeParse<T>(
         (key ? ' (for key `%s`)' : ''),
       value,
       error,
-      key,
+      key
     );
     return null;
   }
@@ -80,8 +80,10 @@ export const useGetNextTableState = () => {
     };
 
     return {
-      perPage: parseToNumber(parseData.pagination?.pageSize, 10),
-      page: parseToNumber(parseData.pagination?.pageIndex, 1),
+      pagination: {
+        pageSize: parseToNumber(parseData.pagination?.pageSize, 10),
+        pageIndex: parseToNumber(parseData.pagination?.pageIndex, 1),
+      },
       filter: (parseData.filter ?? []).reduce((acc, filter) => {
         return {
           ...acc,

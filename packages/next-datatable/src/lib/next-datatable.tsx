@@ -1,8 +1,16 @@
 import { DataTable, DataTableProps } from '@lifespikes/ui';
-import { useNextTableStateInternal } from './_use-next-table-state_internal';
+import {
+  InternalOptionsType,
+  useNextTableStateInternal,
+} from './_use-next-table-state_internal';
+
+export interface NextDatatableProps<T extends Record<any, any>>
+  extends DataTableProps<T> {
+  defaultValues?: InternalOptionsType;
+}
 
 export const NextDataTable = <D extends Record<any, any>>(
-  props: DataTableProps<D>
+  props: NextDatatableProps<D>
 ) => {
   const {
     pagination,
@@ -14,7 +22,7 @@ export const NextDataTable = <D extends Record<any, any>>(
     setSorting,
     setColumnFilters,
     isLoading,
-  } = useNextTableStateInternal();
+  } = useNextTableStateInternal(props.defaultValues);
 
   const _loading = props.isLoading || isLoading;
 

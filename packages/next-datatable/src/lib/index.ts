@@ -5,3 +5,4 @@ export * from './use-column-visibility-state';
 export * from './use-pagination-state';
 export * from './use-query-datatable';
 export * from './use-sorting-state';
+export * from './use-get-next-table-state';

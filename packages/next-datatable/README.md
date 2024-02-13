@@ -1,12 +1,18 @@
 # next-datatable
 
-`next-datatable` is a library created using Shadcn, react-table, and nuqs. The goal is to provide a data table with the ability to have a simple API, thanks to the support of react-table, a user-friendly interface using Shadcn, and the capability to automatically save its state in the URL with nuqs.
-
+`next-datatable` is a library created using Shadcn, react-table, and nuqs. 
+The goal is to provide a data table with the ability to have a simple API 
+thanks to the support of [react-table](https://tanstack.com/table/latest),
+a user-friendly interface using [Shadcn](https://ui.shadcn.com/), 
+and the capability to automatically save its state in the
+URL with [nuqs](https://nuqs.47ng.com/).
 
 # Usage
 
+Let's define some columns
+
 ```tsx
-import { NextDataTable } from '@lifespikes/next-datatable';
+import { ColumnDef } from '@tanstack/react-table';
 
 
 export const columns: ColumnDef<any>[] = [
@@ -56,7 +62,12 @@ export const columns: ColumnDef<any>[] = [
     }
   }
 ];
+```
 
+And let's use our datatable as follows
+
+```tsx
+import { NextDataTable } from '@lifespikes/next-datatable';
 
 const UsersTable = () => {
   const { data } = useGetUsers(); // Fetching data.
@@ -65,4 +76,39 @@ const UsersTable = () => {
   return <NextDataTable data={data} columns={columns} />;
 };
 ```
+
+## How can I use the pagination values to make a query?
+
+You need to use the hook `useGetNextTableState`. For example:
+
+```tsx
+import { NextDataTable, useGetNextTableState } from '@lifespikes/next-datatable';
+
+const UsersTable = () => {
+
+  const { pagination } = useGetNextTableState(); // get state from url
+
+  const { data } = useGetUsers({
+    page: pagination.pageIndex + 1,
+    perPage: pagination.pageSize
+  }); // Fetching data.
+
+
+  return (
+    <NextDataTable
+      data={data}
+      defaultValues={{
+        pagination: {
+          pageIndex: data?.page - 1,
+          pageSize: data?.perPage
+        }
+      }}
+      columns={columns}
+    />
+  );
+};
+```
+
+
+
 
