@@ -1,3 +1,11 @@
+## [1.3.0](https://github.com/lifespikes/packages/compare/v1.2.0...v1.3.0) (2024-02-13)
+
+
+### Features
+
+* **next-datatable-release:** add useGetNextTableState to exports ([580d650](https://github.com/lifespikes/packages/commit/580d6500f0c6924fe45881b14a1da807083d36e5))
+* **next-datatable-release:** provide customization options to the state of the pagination, filters, visibility and sorting ([cefd4b9](https://github.com/lifespikes/packages/commit/cefd4b9b794c81cf04b1470257f1cc8715498042))
+
 ## [1.2.0](https://github.com/lifespikes/packages/compare/v1.1.0...v1.2.0) (2024-02-13)
 
 
