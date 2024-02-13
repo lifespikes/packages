@@ -8,7 +8,8 @@
     "lifespikes",
     "react-table",
     "nextjs",
-    "react"
+    "react",
+    "nuqs"
   ],
   "peerDependencies": {
     "@lifespikes/ui": "*"
