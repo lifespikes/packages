@@ -110,6 +110,8 @@ const UsersTable = () => {
 };
 ```
 
+Check this [example app](../../apps/frontend/app/next-datatable-example.tsx)
+
 
 
 
