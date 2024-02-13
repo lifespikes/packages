@@ -1,3 +1,18 @@
+## [1.4.0](https://github.com/lifespikes/packages/compare/v1.3.0...v1.4.0) (2024-02-13)
+
+
+### Features
+
+* **next-datatable:** create Nextjs app to make a datatable example ([6bd5b9c](https://github.com/lifespikes/packages/commit/6bd5b9c50061056b8c22d0e4838efc11a5c1e0b0))
+* **next-datatable:** support pageCount option ([3d29cc3](https://github.com/lifespikes/packages/commit/3d29cc3ed16321438857b0d4131f5ab587c85ea0))
+
+
+### Chores
+
+* **next-datatable-release:** linting ([8db35ff](https://github.com/lifespikes/packages/commit/8db35ffbf05c2763ed81e797ddcddd29cfff7a3c))
+* **next-datatable-release:** update README.md ([01e5335](https://github.com/lifespikes/packages/commit/01e5335a3bd1a145c763675207e5594d4ea8a1d1))
+* **next-datatable-release:** update README.md ([2631dfd](https://github.com/lifespikes/packages/commit/2631dfda7ea9f0b73978cc365a3be431bbd26c42))
+
 ## [1.3.0](https://github.com/lifespikes/packages/compare/v1.2.0...v1.3.0) (2024-02-13)
 
 
