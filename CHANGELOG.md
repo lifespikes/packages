@@ -1,3 +1,21 @@
+## [1.4.2](https://github.com/lifespikes/packages/compare/v1.4.1...v1.4.2) (2024-02-13)
+
+
+### Bug Fixes
+
+* **next-datatable:** set default value for useGetNextTableState ([41876a1](https://github.com/lifespikes/packages/commit/41876a17f88ee02d7b2ccbdac4cc9aca3c8dc34c))
+
+
+### Chores
+
+* **next-datatable-release:** add example video ([344f3f0](https://github.com/lifespikes/packages/commit/344f3f018101cfb44cabb9c9715558f6a73a57dd))
+* **next-datatable-release:** set default value to null ([685b923](https://github.com/lifespikes/packages/commit/685b9238299d848750c8a15813043d987f7443eb))
+* **next-datatable-release:** update example app ([80fd286](https://github.com/lifespikes/packages/commit/80fd28688a247bede58916fdbca833ba6e5b7a1b))
+* **next-datatable-release:** update example app ([243be69](https://github.com/lifespikes/packages/commit/243be690e4b2be243ff9ac907e7d94ba0a36fa68))
+* update README.md ([1bb18a7](https://github.com/lifespikes/packages/commit/1bb18a76176ac474dbf4b1bcbf70c6bd85822663))
+* update README.md ([91038af](https://github.com/lifespikes/packages/commit/91038af1c96a377d6694b687a98fbdfb50c10f92))
+* update README.md ([34c7e53](https://github.com/lifespikes/packages/commit/34c7e537bb86e35fa9abb90226196a6c2018bb91))
+
 ## [1.4.1](https://github.com/lifespikes/packages/compare/v1.4.0...v1.4.1) (2024-02-13)
 
 
