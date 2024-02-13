@@ -38,7 +38,7 @@ export function safeParse<T>(
 
 const jsonParser = parseAsJson().parse;
 
-const parseToNumber = (value: any, defaultValue: number | null) => {
+const parseToNumber = (value: any, defaultValue: number | null = null) => {
   if (!value) {
     return defaultValue;
   }
