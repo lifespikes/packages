@@ -1,3 +1,16 @@
+## [1.2.0](https://github.com/lifespikes/packages/compare/v1.1.0...v1.2.0) (2024-02-13)
+
+
+### Features
+
+* **next-datatable-release:** update package.json ([97b35a5](https://github.com/lifespikes/packages/commit/97b35a508cef6619b9fbe17a0c644f52e7d9b4df))
+
+
+### Chores
+
+* **next-datatable:** add nuqs to nuqs to external dependencies ([f5f7a73](https://github.com/lifespikes/packages/commit/f5f7a737ada8b6fb6393c1e9edd1b4b75e5b30c7))
+* **next-datatable:** update README.md ([67c3b75](https://github.com/lifespikes/packages/commit/67c3b75720c5ad951d8d094f301777b5542a4717))
+
 ## [1.1.0](https://github.com/lifespikes/packages/compare/v1.0.0...v1.1.0) (2024-02-12)
 
 
