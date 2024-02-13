@@ -106,7 +106,7 @@ const NextDatatableExample = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      const data = await request((pagination?.pageIndex ?? 0) + 1);
+      const data = await request((pagination?.pageIndex ?? 0) + 1, pagination.pageSize ?? 10);
       setData(data);
       setIsLoading(false);
     })();

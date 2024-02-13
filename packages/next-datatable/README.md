@@ -112,6 +112,7 @@ const UsersTable = () => {
 
 Check this [example app](https://github.com/lifespikes/packages/blob/main/apps/frontend/app/next-datatable-example.tsx)
 
+## Example Video
 
 
 
