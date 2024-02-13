@@ -38,7 +38,7 @@ export function safeParse<T>(
 
 const jsonParser = parseAsJson().parse;
 
-const parseToNumber = (value: any, defaultValue: number) => {
+const parseToNumber = (value: any, defaultValue: number | null) => {
   if (!value) {
     return defaultValue;
   }
@@ -81,8 +81,8 @@ export const useGetNextTableState = () => {
 
     return {
       pagination: {
-        pageSize: parseToNumber(parseData.pagination?.pageSize, 10),
-        pageIndex: parseToNumber(parseData.pagination?.pageIndex, 1),
+        pageSize: parseToNumber(parseData.pagination?.pageSize, null),
+        pageIndex: parseToNumber(parseData.pagination?.pageIndex, null),
       },
       filter: (parseData.filter ?? []).reduce((acc, filter) => {
         return {
