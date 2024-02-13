@@ -1,3 +1,15 @@
+## [1.4.1](https://github.com/lifespikes/packages/compare/v1.4.0...v1.4.1) (2024-02-13)
+
+
+### Bug Fixes
+
+* **next-datatable-release:** add next package to external dependencies ([c50f74f](https://github.com/lifespikes/packages/commit/c50f74f6beed7e98d617ea690422a7ddb6e99dc4))
+
+
+### Chores
+
+* **next-datatable-release:** add nuqs keyword ([1aa0227](https://github.com/lifespikes/packages/commit/1aa02274370dfd444cbee3631d8e12dd591433aa))
+
 ## [1.4.0](https://github.com/lifespikes/packages/compare/v1.3.0...v1.4.0) (2024-02-13)
 
 
