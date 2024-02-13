@@ -7,6 +7,7 @@ import {
 export interface NextDatatableProps<T extends Record<any, any>>
   extends DataTableProps<T> {
   defaultValues?: InternalOptionsType;
+  pageCount?: number;
 }
 
 export const NextDataTable = <D extends Record<any, any>>(
@@ -25,7 +26,6 @@ export const NextDataTable = <D extends Record<any, any>>(
   } = useNextTableStateInternal(props.defaultValues);
 
   const _loading = props.isLoading || isLoading;
-
   return (
     <DataTable
       {...props}
@@ -33,6 +33,7 @@ export const NextDataTable = <D extends Record<any, any>>(
         manualPagination: true,
         manualSorting: true,
         manualFiltering: true,
+        pageCount: props.pageCount,
         state: {
           pagination,
           sorting,

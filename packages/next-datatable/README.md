@@ -97,10 +97,11 @@ const UsersTable = () => {
   return (
     <NextDataTable
       data={data}
+      pageCount={data?.totalPages}
       defaultValues={{
         pagination: {
           pageIndex: data?.page - 1,
-          pageSize: data?.perPage
+          pageSize: 10
         }
       }}
       columns={columns}
