@@ -10,3 +10,4 @@ export * from './credit-card-input-mask-field';
 export * from './date-picker-field';
 export * from './date-range-field';
 export * from './dynamic-combobox-field';
+export * from './textarea-field';

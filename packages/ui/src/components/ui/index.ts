@@ -37,3 +37,6 @@ export * from './resizable';
 export * from './drawer';
 export * from './carousel';
 export * from './navigation-menu';
+export * from './textarea';
+export * from './hover-card';
+export * from './credenza-modal';

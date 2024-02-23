@@ -6,7 +6,7 @@ import {
   InputField,
   RadioGroupField,
   SelectField,
-  SwitchField,
+  SwitchField, TextAreaField
 } from '@lifespikes/ui/components/ui';
 import { useForm } from 'react-hook-form';
 import { PropsWithChildren } from 'react';
@@ -216,6 +216,22 @@ export const ComboboxFieldExample: Story = {
           name="combobox_field"
           label="Combobox Field"
           options={comboBoxOptions}
+        />
+      </div>
+    ),
+  },
+};
+
+export const TextAreaFieldExample: Story = {
+  parameters: {
+    layout: 'centered',
+  },
+  args: {
+    children: (
+      <div>
+        <TextAreaField
+          name="text_area_field"
+          label="TextArea Field"
         />
       </div>
     ),
