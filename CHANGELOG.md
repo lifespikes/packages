@@ -1,3 +1,15 @@
+## [1.5.0](https://github.com/lifespikes/packages/compare/v1.4.2...v1.5.0) (2024-02-23)
+
+
+### Features
+
+* **ui:** add the following components: ([9242eae](https://github.com/lifespikes/packages/commit/9242eae499d1b23df682d6af6e9e8c2d9a636ef7))
+
+
+### Chores
+
+* **deps:** bump ip from 2.0.0 to 2.0.1 ([3b670b7](https://github.com/lifespikes/packages/commit/3b670b70f2dde65eeff09e18d4c06fe02ba4d018))
+
 ## [1.4.2](https://github.com/lifespikes/packages/compare/v1.4.1...v1.4.2) (2024-02-13)
 
 
