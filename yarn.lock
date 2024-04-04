@@ -3054,6 +3054,7 @@ __metadata:
     "@radix-ui/react-alert-dialog": "npm:^1.0.5"
     "@radix-ui/react-avatar": "npm:^1.0.4"
     "@radix-ui/react-checkbox": "npm:^1.0.4"
+    "@radix-ui/react-collapsible": "npm:^1.0.3"
     "@radix-ui/react-dialog": "npm:^1.0.5"
     "@radix-ui/react-dropdown-menu": "npm:^2.0.6"
     "@radix-ui/react-hover-card": "npm:^1.0.7"
@@ -3127,6 +3128,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:6.7.1"
     eslint-plugin-react: "npm:7.32.2"
     eslint-plugin-react-hooks: "npm:4.6.0"
+    input-otp: "npm:^1.2.4"
     jest: "npm:^29.4.1"
     jest-environment-jsdom: "npm:^29.4.1"
     jsdom: "npm:~22.1.0"
@@ -3148,6 +3150,7 @@ __metadata:
     recharts: "npm:^2.10.4"
     replace-json-property: "npm:^1.9.0"
     semantic-release: "npm:^23.0.0"
+    sonner: "npm:^1.4.41"
     storybook: "npm:^7.5.1"
     swc-loader: "npm:0.1.15"
     tailwind-merge: "npm:^1.14.0"
@@ -4447,7 +4450,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-collapsible@npm:1.0.3":
+"@radix-ui/react-collapsible@npm:1.0.3, @radix-ui/react-collapsible@npm:^1.0.3":
   version: 1.0.3
   resolution: "@radix-ui/react-collapsible@npm:1.0.3"
   dependencies:
@@ -16459,6 +16462,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"input-otp@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "input-otp@npm:1.2.4"
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: bb2cd158cb244da6e807f791261a77a6184de19580af4afba6cc1ea5ff69e675d401537f8186dd6eab7985748e8e2f0ae67c3a7edfbffe963dda029679ee2d8d
+  languageName: node
+  linkType: hard
+
 "inquirer@npm:^8.2.5":
   version: 8.2.6
   resolution: "inquirer@npm:8.2.6"
@@ -24849,6 +24862,16 @@ __metadata:
     ip: "npm:^2.0.0"
     smart-buffer: "npm:^4.2.0"
   checksum: 43f69dbc9f34fc8220bc51c6eea1c39715ab3cfdb115d6e3285f6c7d1a603c5c75655668a5bbc11e3c7e2c99d60321fb8d7ab6f38cda6a215fadd0d6d0b52130
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^1.4.41":
+  version: 1.4.41
+  resolution: "sonner@npm:1.4.41"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 31467ecab0fcbd5161fb76d158c698841b524686f7f598eecbc2a58d76bc496b5d5242df4350e274575aa3df59428d3aacd534415c968b19fc309c192c443330
   languageName: node
   linkType: hard
 

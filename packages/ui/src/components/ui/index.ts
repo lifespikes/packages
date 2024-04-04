@@ -40,3 +40,6 @@ export * from './navigation-menu';
 export * from './textarea';
 export * from './hover-card';
 export * from './credenza-modal';
+export * from './collapsible';
+export * from './breadcrumb';
+export * from './sonner';
