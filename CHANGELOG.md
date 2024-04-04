@@ -1,3 +1,5 @@
+## [1.5.2](https://github.com/lifespikes/packages/compare/v1.5.1...v1.5.2) (2024-04-04)
+
 ## [1.5.0](https://github.com/lifespikes/packages/compare/v1.4.2...v1.5.0) (2024-02-23)
 
 
