@@ -1,50 +1,96 @@
-import { Steps, Step, StepProps } from '@lifespikes/ui/components/ui';
+import {
+  Step,
+  StepItem,
+  Stepper,
+  useStepper,
+  Button,
+} from '@lifespikes/ui/components/ui';
 import { Meta, StoryObj } from '@storybook/react';
 
 const steps = [
-  { label: 'Step 1', description: 'Step 1 directions', isCompletedStep: true },
-  { label: 'Step 2', description: 'Step 2 directions', isCompletedStep: false },
-  { label: 'Step 2', description: 'Step 2 directions', isCompletedStep: true },
-] satisfies StepProps[];
+  { label: 'Step 1' },
+  { label: 'Step 2' },
+  { label: 'Step 3' },
+] satisfies StepItem[];
 
 const meta = {
   title: 'Components/Stepper',
   tags: ['autodocs'],
-} satisfies Meta<typeof Steps>;
+} satisfies Meta<typeof Stepper>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Vertical: Story = {
-  render: () => {
-    return (
-      <div className="flex h-96 20">
-        <div className="h-10">
-          <Steps isVertical={true}>
-            {steps.map((step, index) => (
-              <Step index={index} key={index} {...step} />
-            ))}
-          </Steps>
+const Footer = () => {
+  const {
+    nextStep,
+    prevStep,
+    resetSteps,
+    hasCompletedAllSteps,
+    isLastStep,
+    isOptionalStep,
+    isDisabledStep,
+  } = useStepper();
+  return (
+    <>
+      {hasCompletedAllSteps && (
+        <div className="h-40 flex items-center justify-center my-4 border bg-secondary text-primary rounded-md">
+          <h1 className="text-xl">Woohoo! All steps completed! 🎉</h1>
         </div>
+      )}
+      <div className="w-full flex justify-end gap-2">
+        {hasCompletedAllSteps ? (
+          <Button size="sm" onClick={resetSteps}>
+            Reset
+          </Button>
+        ) : (
+          <>
+            <Button
+              disabled={isDisabledStep}
+              onClick={prevStep}
+              size="sm"
+              variant="secondary"
+            >
+              Prev
+            </Button>
+            <Button size="sm" onClick={nextStep}>
+              {isLastStep ? 'Finish' : isOptionalStep ? 'Skip' : 'Next'}
+            </Button>
+          </>
+        )}
       </div>
-    );
-  },
+    </>
+  );
 };
 
-export const Horizontal: Story = {
+export const Example: Story = {
   render: () => {
     return (
       <div>
-        <div className="flex h-36 w-10">
-          <div className="h-40">
-            <Steps isVertical={false}>
-              {steps.map((step, index) => (
-                <Step index={index} key={index} {...step} />
-              ))}
-            </Steps>
-          </div>
+        <div className="flex w-full flex-col gap-4">
+          <Stepper initialStep={0} steps={steps}>
+            {steps.map((stepProps, index) => {
+              return (
+                <Step key={stepProps.label} {...stepProps}>
+                  <div className="h-40 flex items-center justify-center my-4 border bg-secondary text-primary rounded-md">
+                    <h1 className="text-xl">Step {index + 1}</h1>
+                  </div>
+                </Step>
+              );
+            })}
+            <Footer />
+          </Stepper>
         </div>
+
+        <a
+          className="text-blue-500 mt-4"
+          rel="noreferrer"
+          target="_blank"
+          href="https://github.com/damianricobelli/ui/tree/feat/stepper/apps/www/registry/new-york/example"
+        >
+          Find more examples here
+        </a>
       </div>
     );
   },
