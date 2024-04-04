@@ -1,3 +1,14 @@
+## [1.6.0](https://github.com/lifespikes/packages/compare/v1.5.2...v1.6.0) (2024-04-04)
+
+
+### Features
+
+* **ui:** add breadcrumb ([01eb474](https://github.com/lifespikes/packages/commit/01eb4747d4cc8427aa5ab451c2cf9a8d10ddb919))
+* **ui:** add input-otp input ([62a17f3](https://github.com/lifespikes/packages/commit/62a17f30b96141eea81f6d74651b151c31076442))
+* **ui:** add new stepper and remove old stepper ([4943be7](https://github.com/lifespikes/packages/commit/4943be797139ba0f381df819036998c72a810eda))
+* **ui:** add sonner ([4e4c149](https://github.com/lifespikes/packages/commit/4e4c14914c2f77491471e5706b17027b0d9f45b7))
+* **ui:** general ui changes ([7b47cf9](https://github.com/lifespikes/packages/commit/7b47cf9315661cdf730c4115f7b5b5da70a8a161))
+
 ## [1.5.2](https://github.com/lifespikes/packages/compare/v1.5.1...v1.5.2) (2024-04-04)
 
 ## [1.5.0](https://github.com/lifespikes/packages/compare/v1.4.2...v1.5.0) (2024-02-23)
