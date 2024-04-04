@@ -44,7 +44,7 @@ export const DynamicSelect: FC<DynamicSelectProps> = ({
       >
         <SelectValue placeholder={label} />
       </SelectTrigger>
-      <SelectContent onFocus={onFocus}>
+      <SelectContent {...props} onFocus={onFocus}>
         <SelectGroup>
           <SelectLabel>{label ?? selectLabel}</SelectLabel>
           {options?.map((option, idx) => (
