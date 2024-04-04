@@ -2997,7 +2997,6 @@ __metadata:
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.2.2"
     vaul: "npm:^0.8.0"
-    vite: "npm:5.1.7"
     vite-plugin-dts: "npm:~2.3.0"
     vite-tsconfig-paths: "npm:^4.2.3"
     vitest: "npm:~0.34.6"
@@ -22164,7 +22163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.23, postcss@npm:^8.4.31, postcss@npm:^8.4.32":
+"postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.23, postcss@npm:^8.4.31":
   version: 8.4.33
   resolution: "postcss@npm:8.4.33"
   dependencies:
@@ -26753,7 +26752,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:5.1.7":
+"vite@npm:^3.0.0 || ^4.0.0 || ^5.0.0-0, vite@npm:^3.1.0 || ^4.0.0 || ^5.0.0-0":
   version: 5.1.7
   resolution: "vite@npm:5.1.7"
   dependencies:
@@ -26790,46 +26789,6 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: f64e1d8bcb237f600790c303447b95f0972e7c5377c0e1c38c1e62ef4864df2bff00c83315994da6e2e64fb51166199403a740b685c5b69a4af648b9244fc69c
-  languageName: node
-  linkType: hard
-
-"vite@npm:^3.0.0 || ^4.0.0 || ^5.0.0-0, vite@npm:^3.1.0 || ^4.0.0 || ^5.0.0-0":
-  version: 5.0.11
-  resolution: "vite@npm:5.0.11"
-  dependencies:
-    esbuild: "npm:^0.19.3"
-    fsevents: "npm:~2.3.3"
-    postcss: "npm:^8.4.32"
-    rollup: "npm:^4.2.0"
-  peerDependencies:
-    "@types/node": ^18.0.0 || >=20.0.0
-    less: "*"
-    lightningcss: ^1.21.0
-    sass: "*"
-    stylus: "*"
-    sugarss: "*"
-    terser: ^5.4.0
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    "@types/node":
-      optional: true
-    less:
-      optional: true
-    lightningcss:
-      optional: true
-    sass:
-      optional: true
-    stylus:
-      optional: true
-    sugarss:
-      optional: true
-    terser:
-      optional: true
-  bin:
-    vite: bin/vite.js
-  checksum: 74a3ddc6d43cf19cb6f827a53d77c481a07517a72b7d82a178df082012ad81ab5231a287a6dcc5471c0b2a5c8dd7e6ea8e1d62d268803057d0315729f09c5e33
   languageName: node
   linkType: hard
 
