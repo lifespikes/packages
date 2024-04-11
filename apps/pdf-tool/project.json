@@ -1,0 +1,63 @@
+{
+  "name": "pdf-tool",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/pdf-tool/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/pdf-tool",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/pdf-tool/src/main.ts",
+        "tsConfig": "apps/pdf-tool/tsconfig.app.json",
+        "assets": ["apps/pdf-tool/src/assets"],
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js"
+          }
+        }
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "pdf-tool:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pdf-tool:build:development"
+        },
+        "production": {
+          "buildTarget": "pdf-tool:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/pdf-tool/jest.config.ts"
+      }
+    }
+  }
+}
