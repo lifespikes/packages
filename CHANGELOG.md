@@ -1,3 +1,18 @@
+## [1.7.0](https://github.com/lifespikes/packages/compare/v1.6.0...v1.7.0) (2024-04-30)
+
+
+### Features
+
+* **ui:** add phone input component and phone input story ([db2a060](https://github.com/lifespikes/packages/commit/db2a06016baee6c067de8473c0b8e5f019a782b7))
+
+
+### Chores
+
+* **deps:** bump tar from 6.2.0 to 6.2.1 ([9b85bcb](https://github.com/lifespikes/packages/commit/9b85bcb3514b21e9ad3ba67d5f17b62a2ae59103))
+* form fields example ([8a8203b](https://github.com/lifespikes/packages/commit/8a8203ba9168c1661bf6ecd21d9b2f93894573de))
+* **next-datatable:** improve types ([a94ea54](https://github.com/lifespikes/packages/commit/a94ea54261f831ef7ed05bf9e6d9bd19c9a3f8a8))
+* **ui:** install ([99a1e53](https://github.com/lifespikes/packages/commit/99a1e53bed510fbffd1309ec7a9157b3ab8c5ba6))
+
 ## [1.6.0](https://github.com/lifespikes/packages/compare/v1.5.2...v1.6.0) (2024-04-04)
 
 
