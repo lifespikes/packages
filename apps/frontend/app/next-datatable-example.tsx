@@ -15,21 +15,7 @@ import {
   CheckboxPrimitive,
 } from '@lifespikes/ui';
 
-const response = {
-  data: [
-    { id: 1, name: 'User 1' },
-    { id: 2, name: 'User 2' },
-    { id: 3, name: 'User 3' },
-  ],
-  meta: {
-    totalItems: 100,
-    perPage: 10,
-    currentPage: 1,
-    totalPages: 10,
-  },
-};
-
-export const columns: ColumnDef<(typeof response)['data'][number]>[] = [
+export const columns: ColumnDef<Product>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -106,7 +92,10 @@ const NextDatatableExample = () => {
   useEffect(() => {
     (async () => {
       setIsLoading(true);
-      const data = await request((pagination?.pageIndex ?? 0) + 1, pagination.pageSize ?? 10);
+      const data = await request(
+        (pagination?.pageIndex ?? 0) + 1,
+        pagination.pageSize ?? 10
+      );
       setData(data);
       setIsLoading(false);
     })();
