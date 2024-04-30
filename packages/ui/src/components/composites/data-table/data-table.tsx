@@ -11,6 +11,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import {
+  Skeleton,
   Table,
   TableBody,
   TableCell,
@@ -21,7 +22,6 @@ import {
 } from '@lifespikes/ui/components';
 import { DataTablePagination } from '@lifespikes/ui/components/composites';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { Skeleton } from '@lifespikes/ui/components';
 
 export interface WithTable {
   table: TableType<Record<any, any>>;
@@ -29,10 +29,9 @@ export interface WithTable {
 
 export type RenderComponentDataTableHandler = (context: WithTable) => ReactNode;
 
-export interface DataTableProps<D extends Record<any, any>>
-  extends TableVariantProps {
-  data: D[];
-  columns: ColumnDef<any>[];
+export interface DataTableProps<TData, TValue> extends TableVariantProps {
+  data: TData[];
+  columns: ColumnDef<TData, TValue>[];
   tableOptions?: Partial<TableOptions<Record<any, any>>>;
   renderHeader?: RenderComponentDataTableHandler;
   renderFooter?: RenderComponentDataTableHandler;
@@ -56,19 +55,23 @@ export const DataTableLoading: FC<WithTable> = ({ table }) => {
   );
 };
 
-export const DataTable = <D extends Record<any, any>>({
+export const DataTable = <TData, TValue>({
   data,
   columns,
-  tableOptions,
-  renderHeader,
-  renderFooter,
-  variant,
-  variantClassName,
-  isLoading,
-}: DataTableProps<D>) => {
+  ...props
+}: DataTableProps<TData, TValue>) => {
+  const {
+    tableOptions,
+    renderHeader,
+    renderFooter,
+    variant,
+    variantClassName,
+    isLoading,
+  } = props;
+
   const table = useReactTable({
-    data,
-    columns,
+    data: data as any,
+    columns: columns as any,
     getCoreRowModel: getCoreRowModel(),
     ...tableOptions,
     state: {

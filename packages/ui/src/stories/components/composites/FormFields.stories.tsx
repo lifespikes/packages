@@ -1,17 +1,19 @@
 import type { Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 import {
   DatePickerField,
   DropZoneField,
   Form,
   InputField,
+  PhoneInputField,
   RadioGroupField,
   SelectField,
-  SwitchField, TextAreaField
+  SwitchField,
+  TextAreaField,
 } from '@lifespikes/ui/components/ui';
 import { useForm } from 'react-hook-form';
 import { PropsWithChildren } from 'react';
 import { AddressInputField } from '@lifespikes/ui/components/ui/form/fields/address-input-field';
-import { StoryObj } from '@storybook/react';
 import { ComboboxField } from '@lifespikes/ui/components/ui/form/fields/combobox-field';
 import { DateRangeField } from '@lifespikes/ui/components/ui/form/fields/date-range-field';
 
@@ -39,39 +41,7 @@ const ExampleForm = (props: PropsWithChildren) => {
 const meta = {
   title: 'Composites/FormFields',
   component: ExampleForm,
-  args: {
-    children: (
-      <>
-        <InputField name="input_field" label="Input Field" />
-        <SelectField
-          name="select-field"
-          label="Select Field"
-          options={[
-            {
-              label: 'Option 1',
-              value: 'option-1',
-            },
-            {
-              label: 'Option 2',
-              value: 'option-2',
-            },
-          ]}
-        />
-        <DatePickerField name="date_picker_field" label="Date Picker Field" />
-        <DateRangeField name="date_range_field" label="Date Range Field" />
-        <SwitchField name="switch_field" label="Switch Field" />
-        <AddressInputField
-          apiKey="test_pub_bcc4a00c58adfb4b82d0f943135288d"
-          name="address"
-        />
-        <ComboboxField
-          name="combobox_field"
-          label="Combobox Field"
-          options={comboBoxOptions}
-        />
-      </>
-    ),
-  },
+  render: (args) => <ExampleForm {...args} />,
   parameters: {
     layout: 'centered',
   },
@@ -82,14 +52,16 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const InputFieldExample: Story = {
-  args: {
-    children: <InputField name="input_field" label="Input Field" />,
-  },
+  render: (args) => (
+    <ExampleForm>
+      <InputField name="input_field" label="Input Field" />
+    </ExampleForm>
+  ),
 };
 
 export const SelectFieldExample: Story = {
-  args: {
-    children: (
+  render: (args) => (
+    <ExampleForm>
       <SelectField
         name="select-field"
         label="Select Field"
@@ -104,48 +76,48 @@ export const SelectFieldExample: Story = {
           },
         ]}
       />
-    ),
-  },
+    </ExampleForm>
+  ),
 };
 
 export const DatePickerFieldExample: Story = {
-  args: {
-    children: (
+  render: (args) => (
+    <ExampleForm>
       <DatePickerField name="date_picker_field" label="Date Picker Field" />
-    ),
-  },
+    </ExampleForm>
+  ),
 };
 
 export const DateRangeFieldExample: Story = {
-  args: {
-    children: (
+  render: (args) => (
+    <ExampleForm>
       <DateRangeField name="date_range_field" label="Date Range Field" />
-    ),
-  },
+    </ExampleForm>
+  ),
 };
 
 export const SwitchFieldExample: Story = {
-  args: {
-    children: <SwitchField name="switch_field" label="Switch Field" />,
-  },
+  render: (args) => (
+    <ExampleForm>
+      <SwitchField name="switch_field" label="Switch Field" />
+    </ExampleForm>
+  ),
 };
 
 export const AddressInputFieldExample: Story = {
-  args: {
-    children: (
-      <div className="h-10 16">
-        <AddressInputField
-          apiKey="test_pub_bcc4a00c58adfb4b82d0f943135288d"
-          name="address"
-        />
-      </div>
-    ),
-  },
+  render: (args) => (
+    <ExampleForm>
+      <AddressInputField
+        apiKey="test_pub_bcc4a00c58adfb4b82d0f943135288d"
+        name="address"
+      />
+    </ExampleForm>
+  ),
 };
 
 export const RadioGroupFieldExample: Story = {
-  args: {
-    children: (
+  render: (args) => (
+    <ExampleForm>
       <div className="h-10 16 space-y-4">
         <RadioGroupField
           name="radio_group"
@@ -188,52 +160,54 @@ export const RadioGroupFieldExample: Story = {
           ]}
         />
       </div>
-    ),
-  },
+    </ExampleForm>
+  ),
 };
 
 export const DropZoneFieldExample: Story = {
   parameters: {
     layout: '',
   },
-  args: {
-    children: (
-      <div>
-        <DropZoneField name="drop-zone" />
-      </div>
-    ),
-  },
+  render: (args) => (
+    <ExampleForm>
+      <DropZoneField name="drop-zone" />
+    </ExampleForm>
+  ),
 };
 
 export const ComboboxFieldExample: Story = {
   parameters: {
     layout: 'centered',
   },
-  args: {
-    children: (
-      <div>
-        <ComboboxField
-          name="combobox_field"
-          label="Combobox Field"
-          options={comboBoxOptions}
-        />
-      </div>
-    ),
-  },
+  render: (args) => (
+    <ExampleForm>
+      <ComboboxField
+        name="combobox_field"
+        label="Combobox Field"
+        options={comboBoxOptions}
+      />
+    </ExampleForm>
+  ),
 };
 
 export const TextAreaFieldExample: Story = {
   parameters: {
     layout: 'centered',
   },
-  args: {
-    children: (
-      <div>
-        <TextAreaField
-          name="text_area_field"
-          label="TextArea Field"
-        />
-      </div>
-    ),
+  render: (args) => (
+    <ExampleForm>
+      <TextAreaField name="text_area_field" label="TextArea Field" />
+    </ExampleForm>
+  ),
+};
+
+export const PhoneInputFieldExample: Story = {
+  parameters: {
+    layout: 'centered',
   },
+  render: (args) => (
+    <ExampleForm>
+      <PhoneInputField name="phone_input_field" label="Phone" />
+    </ExampleForm>
+  ),
 };

@@ -4,14 +4,14 @@ import {
   useNextTableStateInternal,
 } from './_use-next-table-state_internal';
 
-export interface NextDatatableProps<T extends Record<any, any>>
-  extends DataTableProps<T> {
+export interface NextDatatableProps<T extends Record<any, any>, V>
+  extends DataTableProps<T, V> {
   defaultValues?: InternalOptionsType;
   pageCount?: number;
 }
 
-export const NextDataTable = <D extends Record<any, any>>(
-  props: NextDatatableProps<D>
+export const NextDataTable = <D extends Record<any, any>, V>(
+  props: NextDatatableProps<D, V>
 ) => {
   const {
     pagination,

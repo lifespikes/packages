@@ -43,3 +43,4 @@ export * from './credenza-modal';
 export * from './collapsible';
 export * from './breadcrumb';
 export * from './sonner';
+export * from './phone-input';
