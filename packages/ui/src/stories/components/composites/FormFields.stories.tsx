@@ -4,7 +4,9 @@ import {
   DatePickerField,
   DropZoneField,
   Form,
+  Input,
   InputField,
+  InputProps,
   PhoneInputField,
   RadioGroupField,
   SelectField,
@@ -16,6 +18,8 @@ import { PropsWithChildren } from 'react';
 import { AddressInputField } from '@lifespikes/ui/components/ui/form/fields/address-input-field';
 import { ComboboxField } from '@lifespikes/ui/components/ui/form/fields/combobox-field';
 import { DateRangeField } from '@lifespikes/ui/components/ui/form/fields/date-range-field';
+import { cn } from '../../../lib/utils';
+import * as React from 'react';
 
 const comboBoxOptions = [
   {
@@ -201,13 +205,33 @@ export const TextAreaFieldExample: Story = {
   ),
 };
 
+const InputComponent = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, ...props }, ref) => (
+    <Input
+      className={cn('rounded-e-lg rounded-s-none flex-1', className)}
+      containerClassName="w-full"
+      {...props}
+      ref={ref}
+    />
+  )
+);
+InputComponent.displayName = 'InputComponent';
+
 export const PhoneInputFieldExample: Story = {
   parameters: {
     layout: 'centered',
   },
   render: (args) => (
     <ExampleForm>
-      <PhoneInputField name="phone_input_field" label="Phone" />
+      <div className="w-[400px] bg-red-500">
+        <PhoneInputField
+          name="phone_input_field"
+          label="Phone"
+          _phoneInput={{
+            inputComponent: InputComponent,
+          }}
+        />
+      </div>
     </ExampleForm>
   ),
 };
