@@ -1,3 +1,16 @@
+## [1.7.1](https://github.com/lifespikes/packages/compare/v1.7.0...v1.7.1) (2024-05-16)
+
+
+### Bug Fixes
+
+* **ui:** bundle size fix ([fff976a](https://github.com/lifespikes/packages/commit/fff976ab0c75fb138c59fe9f6ecd9256f52f89f8))
+* **ui:** Input component does not take the full width ([ef365d4](https://github.com/lifespikes/packages/commit/ef365d4c536b79d8339f173df736391e6108c535))
+
+
+### Chores
+
+* **ui:** use Suspense ([6041fb3](https://github.com/lifespikes/packages/commit/6041fb3b97f5406e2d5329a3cdbd1b412a6f05f8))
+
 ## [1.7.0](https://github.com/lifespikes/packages/compare/v1.6.0...v1.7.0) (2024-04-30)
 
 
