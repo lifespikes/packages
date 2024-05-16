@@ -3,11 +3,17 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
+import * as fs from 'fs-extra';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { fileURLToPath } from 'node:url';
 import viteTsConfigPaths from 'vite-tsconfig-paths';
+import * as process from 'node:process';
 
 const filesToIgnore: string[] = ['src/stories'];
+
+const packageJson = fs.readJsonSync(path.join(process.cwd(), 'package.json'));
+
+const dependencies = Object.keys(packageJson.dependencies || {});
 
 export default defineConfig({
   root: __dirname,
@@ -20,11 +26,11 @@ export default defineConfig({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
-      exclude: ['src/stories']
+      exclude: ['src/stories'],
     }),
     viteTsConfigPaths({
-      root: '../../'
-    })
+      root: '../../',
+    }),
   ],
 
   // Uncomment this if you are using workers.
@@ -38,7 +44,7 @@ export default defineConfig({
     outDir: '../../dist/packages/ui',
     reportCompressedSize: true,
     commonjsOptions: {
-      transformMixedEsModules: true
+      transformMixedEsModules: true,
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
@@ -47,20 +53,25 @@ export default defineConfig({
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es', 'cjs']
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime', ...filesToIgnore.map((file) =>
-        fileURLToPath(new URL(file, import.meta.url))
-      )]
-    }
+      external: [
+        'react',
+        'react-dom',
+        'react/jsx-runtime',
+        ...dependencies,
+        ...filesToIgnore.map((file) =>
+          fileURLToPath(new URL(file, import.meta.url))
+        ),
+      ],
+    },
   },
-
   test: {
     globals: true,
     cache: {
-      dir: '../../node_modules/.vitest'
+      dir: '../../node_modules/.vitest',
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -68,7 +79,7 @@ export default defineConfig({
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../coverage/packages/ui',
-      provider: 'v8'
-    }
-  }
+      provider: 'v8',
+    },
+  },
 });
