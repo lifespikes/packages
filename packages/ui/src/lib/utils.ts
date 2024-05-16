@@ -2,12 +2,6 @@ import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import v from 'voca';
 import { UsesHints } from '@lifespikes/ui/types/global';
-import dayjs from 'dayjs';
-import localeDate from 'dayjs/plugin/localeData';
-import es from 'dayjs/locale/es';
-import en from 'dayjs/locale/en';
-
-export const dayjsLocales = { es, en };
 
 export const labelHints: UsesHints = {
   email: 'E-mail',
@@ -34,31 +28,5 @@ export const labelFromFieldName = (name: string): string =>
         const idx = w.toLowerCase();
         return idx in labelHints ? labelHints[idx] : w;
       })
-      .join(' '),
+      .join(' ')
   );
-
-export const getDateLocaleValues = (locale: 'es' | 'en' = 'en') => {
-  dayjs.locale(dayjsLocales[locale]);
-  dayjs.extend(localeDate);
-  return {
-    months: dayjs.months(),
-    months_short: dayjs.monthsShort(),
-    weekdays: dayjs.weekdays(),
-    weekdays_short: dayjs.weekdaysShort(),
-    weekdays_min: dayjs.weekdaysMin(),
-  };
-};
-
-export const generateYearsFromNow = (numberOfYears = 5) => {
-  const currentYear = new Date().getFullYear();
-  const years = [];
-
-  let count = 0;
-
-  while (count < numberOfYears + 1) {
-    years.push(currentYear + count);
-    count++;
-  }
-
-  return years;
-};
