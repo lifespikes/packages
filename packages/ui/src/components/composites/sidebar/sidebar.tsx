@@ -166,34 +166,43 @@ export const Sidebar = memo(
         onOpen();
       }, [onOpen]);
 
+      const navigationContent = useMemo(
+        () => (
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-background px-6 pb-4 h-full">
+            <div className="flex h-16 shrink-0 items-center">
+              {renderLogo ? (
+                renderLogo()
+              ) : (
+                <img className="h-8 w-auto" src={logo} alt="Your Company" />
+              )}
+            </div>
+            <nav className="flex flex-1 flex-col">
+              <ul className="flex flex-1 flex-col gap-y-7 mt-4">
+                <li>
+                  <SidebarList items={filteredItems} />
+                </li>
+                {bottomItem ? (
+                  <li className="mt-auto">
+                    <SidebarListItem item={bottomItem} />
+                  </li>
+                ) : null}
+              </ul>
+            </nav>
+          </div>
+        ),
+        [renderLogo, logo, filteredItems, bottomItem]
+      );
+
       return (
         <div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetContent side="left" className="px-0"></SheetContent>
+            <SheetContent side="left" className="px-0">
+              {navigationContent}
+            </SheetContent>
           </Sheet>
 
           <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-            <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-background px-6 pb-4 h-full">
-              <div className="flex h-16 shrink-0 items-center">
-                {renderLogo ? (
-                  renderLogo()
-                ) : (
-                  <img className="h-8 w-auto" src={logo} alt="Your Company" />
-                )}
-              </div>
-              <nav className="flex flex-1 flex-col">
-                <ul className="flex flex-1 flex-col gap-y-7 mt-4">
-                  <li>
-                    <SidebarList items={filteredItems} />
-                  </li>
-                  {bottomItem ? (
-                    <li className="mt-auto">
-                      <SidebarListItem item={bottomItem} />
-                    </li>
-                  ) : null}
-                </ul>
-              </nav>
-            </div>
+            {navigationContent}
           </div>
 
           {renderMenuButton ? (
