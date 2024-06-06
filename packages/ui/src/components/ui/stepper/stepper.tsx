@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { cva } from 'class-variance-authority';
 import { CheckIcon, Loader2, LucideIcon, X } from 'lucide-react';
-import { Button, cn, Collapsible, CollapsibleContent } from '@lifespikes/ui';
+import { Button,  Collapsible, CollapsibleContent } from '@lifespikes/ui';
+import {cn} from "../../../lib/utils";
 
 interface StepperContextValue extends StepperProps {
   clickable?: boolean;
