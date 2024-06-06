@@ -1,3 +1,18 @@
+## [1.7.2](https://github.com/lifespikes/packages/compare/v1.7.1...v1.7.2) (2024-06-06)
+
+
+### Bug Fixes
+
+* **ui:** add navigation to the sheet ([f6fd1de](https://github.com/lifespikes/packages/commit/f6fd1de3a114a03459367ca47831ba839f738e55))
+
+
+### Chores
+
+* **deps:** bump ejs from 3.1.9 to 3.1.10 ([52f0b37](https://github.com/lifespikes/packages/commit/52f0b376e8038c32bd564cff9326d5fa7227dad9))
+* install deps ([c0e0c24](https://github.com/lifespikes/packages/commit/c0e0c2405c895290c7ef294745502be67f3188a4))
+* **ui:** bad import ([6967599](https://github.com/lifespikes/packages/commit/6967599b3d931106bd5491b1c921db1bb2e4608e))
+* **ui:** improve sidebar implementation ([73bd05d](https://github.com/lifespikes/packages/commit/73bd05d48cdbb51f7c7080c863609d2420345d0d))
+
 ## [1.7.1](https://github.com/lifespikes/packages/compare/v1.7.0...v1.7.1) (2024-05-16)
 
 
