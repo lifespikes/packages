@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { cva } from 'class-variance-authority';
 import { CheckIcon, Loader2, LucideIcon, X } from 'lucide-react';
-import { Button,  Collapsible, CollapsibleContent } from '@lifespikes/ui';
-import {cn} from "../../../lib/utils";
+import { Button, Collapsible, CollapsibleContent } from '@lifespikes/ui';
+import { cn } from '../../../lib/utils';
 
 interface StepperContextValue extends StepperProps {
   clickable?: boolean;
@@ -229,7 +229,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
     const stepCount = items.length;
 
     const isMobile = useMediaQuery(
-      `(max-width: ${mobileBreakpoint || '768px'})`
+      `(max-width: ${mobileBreakpoint || '768px'})`,
     );
 
     const clickable = !!onClickStep;
@@ -256,6 +256,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
           expandVerticalSteps,
           steps,
           scrollTracking,
+          styles,
         }}
       >
         <div
@@ -267,7 +268,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
             orientation === 'vertical' ? 'flex-col' : 'flex-row',
             variant === 'line' && orientation === 'horizontal' && 'gap-4',
             className,
-            styles?.['main-container']
+            styles?.['main-container'],
           )}
           style={
             {
@@ -287,7 +288,7 @@ const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
         {footer}
       </StepperProvider>
     );
-  }
+  },
 );
 
 Stepper.defaultProps = {
@@ -344,7 +345,7 @@ const HorizontalContent = ({ children }: { children: React.ReactNode }) => {
         }
         return React.Children.map(
           node.props.children,
-          (childNode) => childNode
+          (childNode) => childNode,
         );
       })}
     </>
@@ -403,7 +404,7 @@ const Step = React.forwardRef<HTMLLIElement, StepProps>(
       onClickStep,
     } = props as FullStepProps;
 
-    const { isVertical, isError, isLoading, clickable } = useStepper();
+    const { isVertical, isError, isLoading, clickable, styles } = useStepper();
 
     const hasVisited = isCurrentStep || isCompletedStep;
 
@@ -424,6 +425,7 @@ const Step = React.forwardRef<HTMLLIElement, StepProps>(
       state,
       errorIcon,
       onClickStep,
+      styles,
     };
 
     const renderStep = () => {
@@ -440,7 +442,7 @@ const Step = React.forwardRef<HTMLLIElement, StepProps>(
     };
 
     return renderStep();
-  }
+  },
 );
 
 // <---------- VERTICAL STEP ---------->
@@ -461,12 +463,12 @@ const verticalStepVariants = cva(
           '[&:not(:last-child)]:after:absolute',
           '[&:not(:last-child)]:after:top-[calc(var(--step-icon-size)+var(--step-gap))]',
           '[&:not(:last-child)]:after:bottom-[var(--step-gap)]',
-          '[&:not(:last-child)]:after:transition-all [&:not(:last-child)]:after:duration-200'
+          '[&:not(:last-child)]:after:transition-all [&:not(:last-child)]:after:duration-200',
         ),
         line: 'flex-1 border-t-0 mb-4',
       },
     },
-  }
+  },
 );
 
 // eslint-disable-next-line react/display-name
@@ -535,7 +537,7 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>(
           }),
           isCompletedStep &&
             '[&:not(:last-child)]:after:bg-blue-500 [&:not(:last-child)]:after:data-[invalid=true]:bg-destructive',
-          styles?.['vertical-step']
+          styles?.['vertical-step'],
         )}
         data-optional={steps[index || 0]?.optional}
         data-completed={isCompletedStep}
@@ -555,7 +557,7 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>(
             'flex items-center',
             variant === 'line' &&
               'border-s-[3px] data-[active=true]:border-blue-500 py-2 ps-3',
-            styles?.['vertical-step-container']
+            styles?.['vertical-step-container'],
           )}
         >
           <StepButtonContainer
@@ -594,14 +596,14 @@ const VerticalStep = React.forwardRef<HTMLDivElement, VerticalStepProps>(
             'min-h-4',
             variant !== 'line' && 'ps-[--step-icon-size]',
             variant === 'line' && orientation === 'vertical' && 'min-h-0',
-            styles?.['vertical-step-content']
+            styles?.['vertical-step-content'],
           )}
         >
           {renderChildren()}
         </div>
       </div>
     );
-  }
+  },
 );
 
 // <---------- HORIZONTAL STEP ---------->
@@ -664,7 +666,7 @@ const HorizontalStep = React.forwardRef<HTMLDivElement, StepSharedProps>(
             'flex-col flex-1 border-t-[3px] data-[active=true]:border-blue-500',
           isCompletedStep &&
             '[&:not(:last-child)]:after:bg-blue-500 [&:not(:last-child)]:after:data-[invalid=true]:bg-destructive',
-          styles?.['horizontal-step']
+          styles?.['horizontal-step'],
         )}
         data-optional={steps[index || 0]?.optional}
         data-completed={isCompletedStep}
@@ -680,7 +682,7 @@ const HorizontalStep = React.forwardRef<HTMLDivElement, StepSharedProps>(
             'flex items-center',
             variant === 'circle-alt' && 'flex-col justify-center gap-1',
             variant === 'line' && 'w-full',
-            styles?.['horizontal-step-container']
+            styles?.['horizontal-step-container'],
           )}
         >
           <StepButtonContainer
@@ -708,7 +710,7 @@ const HorizontalStep = React.forwardRef<HTMLDivElement, StepSharedProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 // <---------- STEP BUTTON CONTAINER ---------->
@@ -763,10 +765,10 @@ const StepButtonContainer = ({
         'border-2 flex rounded-full justify-center items-center',
         'data-[clickable=true]:pointer-events-auto',
         'data-[active=true]:bg-blue-500 data-[active=true]:border-blue-500 data-[active=true]:text-primary-foreground dark:data-[active=true]:text-primary',
-        'data-[current=true]:border-blue-500 data-[current=true]:bg-secondary',
+        'data-[current=true]:border-blue-500 data-[current=true]:bg-secondary data-[current=true]:text-primary',
         'data-[invalid=true]:!bg-destructive data-[invalid=true]:!border-destructive data-[invalid=true]:!text-primary-foreground dark:data-[invalid=true]:!text-primary',
         stepButtonVariants({ size }),
-        styles?.['step-button-container']
+        styles?.['step-button-container'],
       )}
       aria-current={isCurrentStep ? 'step' : undefined}
       data-current={isCurrentStep}
@@ -828,17 +830,17 @@ const StepIcon = React.forwardRef<HTMLDivElement, StepIconProps>(
 
     const Icon = React.useMemo(
       () => (CustomIcon ? CustomIcon : null),
-      [CustomIcon]
+      [CustomIcon],
     );
 
     const ErrorIcon = React.useMemo(
       () => (CustomErrorIcon ? CustomErrorIcon : null),
-      [CustomErrorIcon]
+      [CustomErrorIcon],
     );
 
     const Check = React.useMemo(
       () => (CustomCheckIcon ? CustomCheckIcon : CheckIcon),
-      [CustomCheckIcon]
+      [CustomCheckIcon],
     );
 
     return React.useMemo(() => {
@@ -906,7 +908,7 @@ const StepIcon = React.forwardRef<HTMLDivElement, StepIconProps>(
       ref,
       size,
     ]);
-  }
+  },
 );
 
 // <---------- STEP LABEL ---------->
@@ -963,7 +965,7 @@ const StepLabel = ({
         variant === 'circle-alt' && 'text-center',
         variant === 'circle-alt' && orientation === 'horizontal' && 'ms-0',
         variant === 'circle-alt' && orientation === 'vertical' && 'text-start',
-        styles?.['step-label-container']
+        styles?.['step-label-container'],
       )}
       style={{
         opacity,
@@ -974,7 +976,7 @@ const StepLabel = ({
           className={cn(
             'stepper__step-label',
             labelVariants({ size }),
-            styles?.['step-label']
+            styles?.['step-label'],
           )}
         >
           {label}
@@ -986,7 +988,7 @@ const StepLabel = ({
             'stepper__step-description',
             'text-muted-foreground',
             descriptionVariants({ size }),
-            styles?.['step-description']
+            styles?.['step-description'],
           )}
         >
           {description}
