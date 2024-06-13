@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/lifespikes/packages/compare/v1.7.2...v1.7.3) (2024-06-13)
+
+
+### Bug Fixes
+
+* **ui:** stepper styles are not passed correctly ([9ffbe66](https://github.com/lifespikes/packages/commit/9ffbe6674675849c4a57dbbe59eec17aff8d0bac))
+
 ## [1.7.2](https://github.com/lifespikes/packages/compare/v1.7.1...v1.7.2) (2024-06-06)
 
 
