@@ -13,7 +13,7 @@ import {
   SwitchField,
   TextAreaField,
 } from '@lifespikes/ui/components/ui';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormContext } from 'react-hook-form';
 import { PropsWithChildren } from 'react';
 import { AddressInputField } from '@lifespikes/ui/components/ui/form/fields/address-input-field';
 import { ComboboxField } from '@lifespikes/ui/components/ui/form/fields/combobox-field';
@@ -223,7 +223,7 @@ export const PhoneInputFieldExample: Story = {
   },
   render: (args) => (
     <ExampleForm>
-      <div className="w-[400px] bg-red-500">
+      <div className="w-[400px]">
         <PhoneInputField
           name="phone_input_field"
           label="Phone"
@@ -232,6 +232,32 @@ export const PhoneInputFieldExample: Story = {
           }}
         />
       </div>
+    </ExampleForm>
+  ),
+};
+
+const Watcher = () => {
+  const { watch } = useFormContext();
+
+  return (
+    <>
+      When the mask is enabled, it updates with the unmasked value. value: "
+      <strong>{watch('formated_inputField')}</strong>"
+    </>
+  );
+};
+
+export const FormattedInputFieldExample: Story = {
+  render: (args) => (
+    <ExampleForm>
+      <Watcher />
+      <InputField
+        isMaskEnabled
+        mask="00-0000000"
+        name="formated_inputField"
+        label="Formated Input Field"
+        placeholder="12-1234567"
+      />
     </ExampleForm>
   ),
 };
