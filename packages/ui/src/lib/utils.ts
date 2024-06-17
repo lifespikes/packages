@@ -2,6 +2,7 @@ import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import v from 'voca';
 import { UsesHints } from '@lifespikes/ui/types/global';
+import { IMask } from 'react-imask';
 
 export const labelHints: UsesHints = {
   email: 'E-mail',
@@ -30,3 +31,13 @@ export const labelFromFieldName = (name: string): string =>
       })
       .join(' ')
   );
+
+export const createMaskValue = (value: string, mask: string) => {
+  const masked = IMask.createMask({
+    mask,
+  });
+
+  masked.resolve(value);
+
+  return masked;
+};
