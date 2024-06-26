@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/lifespikes/packages/compare/v1.7.4...v1.7.5) (2024-06-26)
+
+
+### Bug Fixes
+
+* don't show undefined value ([9baf9d5](https://github.com/lifespikes/packages/commit/9baf9d5870c2c20ef3d08134ec3ef17a118b0a0b))
+
 ## [1.7.4](https://github.com/lifespikes/packages/compare/v1.7.3...v1.7.4) (2024-06-17)
 
 ## [1.7.3](https://github.com/lifespikes/packages/compare/v1.7.2...v1.7.3) (2024-06-13)
