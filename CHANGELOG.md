@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/lifespikes/packages/compare/v1.7.5...v1.7.6) (2024-07-08)
+
+
+### Bug Fixes
+
+* **ui:** Bad reference of type definitions ([b4e4102](https://github.com/lifespikes/packages/commit/b4e4102bac2133bd25658e8ae43017fcf2aa6529))
+
 ## [1.7.5](https://github.com/lifespikes/packages/compare/v1.7.4...v1.7.5) (2024-06-26)
 
 
