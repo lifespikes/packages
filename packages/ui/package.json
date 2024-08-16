@@ -3,7 +3,6 @@
   "description": "Lifespikes ui",
   "license": "MIT",
   "author": "santigp258",
-  "version": "0.1.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
