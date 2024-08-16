@@ -3201,7 +3201,6 @@ __metadata:
     react-day-picker: "npm:^8.9.1"
     react-dom: "npm:18.2.0"
     react-dropzone: "npm:^14.2.3"
-    react-hook-form: "npm:^7.47.0"
     react-imask: "npm:^7.6.1"
     react-phone-number-input: "npm:^3.3.9"
     react-resizable-panels: "npm:^1.0.9"
@@ -3225,6 +3224,8 @@ __metadata:
     vitest: "npm:~0.34.6"
     voca: "npm:^1.4.1"
     zod: "npm:^3.22.4"
+  peerDependencies:
+    react-hook-form: ^7.47.0
   languageName: unknown
   linkType: soft
 
@@ -23175,15 +23176,6 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: 0d60a0ea758529c32a706d0c69d70b69fb94de3c46442fffdee34f08f51ffceddbb5395b41dfd1565895653e9f60f98ca525835be9d5db1f16d6b22be12f4cd4
-  languageName: node
-  linkType: hard
-
-"react-hook-form@npm:^7.47.0":
-  version: 7.51.4
-  resolution: "react-hook-form@npm:7.51.4"
-  peerDependencies:
-    react: ^16.8.0 || ^17 || ^18
-  checksum: 73b585adb80bd99ae1fc21208e389fd9830f82c8c8bab4b6c4d5853f858a3259b8dc8fd4aa4608a0bd95bc69883c9332f2fa5e8c80dc17dbb2866de9744dbdb6
   languageName: node
   linkType: hard
 
