@@ -7,7 +7,6 @@ import { IMask } from 'react-imask';
 export const labelHints: UsesHints = {
   email: 'E-mail',
 };
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
