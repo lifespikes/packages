@@ -8,6 +8,7 @@ import {
   FieldValues,
   FormProvider,
   useFormContext,
+  useForm
 } from 'react-hook-form';
 
 import { cn, labelFromFieldName } from '@lifespikes/ui/lib/utils';
@@ -251,6 +252,7 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = 'FormMessage';
 
 export {
+  useForm,
   useFormField,
   Form,
   FormItem,
@@ -258,5 +260,5 @@ export {
   FormControl,
   FormDescription,
   FormMessage,
-  FormField,
+  FormField
 };
