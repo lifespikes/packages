@@ -252,7 +252,6 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = 'FormMessage';
 
 export {
-  useForm,
   useFormField,
   Form,
   FormItem,
@@ -260,5 +259,6 @@ export {
   FormControl,
   FormDescription,
   FormMessage,
-  FormField
+  FormField,
+  useForm
 };
