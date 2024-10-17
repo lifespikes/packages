@@ -1,6 +1,7 @@
 {
   "name": "@lifespikes/ui",
   "description": "Lifespikes ui",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "santigp258",
   "main": "./index.js",
