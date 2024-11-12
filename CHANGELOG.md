@@ -1,3 +1,28 @@
+## [1.8.0](https://github.com/lifespikes/packages/compare/v1.7.6...v1.8.0) (2024-11-12)
+
+
+### Features
+
+* condition the rendering of the close button in the dialog component ([0124b12](https://github.com/lifespikes/packages/commit/0124b125a569330eff9b8e2383f38adc563ddeb6))
+* **ui:** export useForm ([4d5fed3](https://github.com/lifespikes/packages/commit/4d5fed372aa463b86f48bb6552deac41011ca4d2))
+
+
+### Bug Fixes
+
+* try release ([b759f1b](https://github.com/lifespikes/packages/commit/b759f1b9d12016b431ecbc474bb5dc20e69958f4))
+* **ui:** export useForm function to try to fix type errors ([5ea027b](https://github.com/lifespikes/packages/commit/5ea027bda5f5abeb6342d7e23075da06cfeedd70))
+* **ui:** release error ([bdf41a6](https://github.com/lifespikes/packages/commit/bdf41a6698b72c171cca400c3737535067d9d078))
+* **ui:** set react-hook-form as a peer dependency ([6888649](https://github.com/lifespikes/packages/commit/688864987481a4f219f0620c5aee01d35721012b))
+
+
+### Chores
+
+* change RHF to a peerdep ([a2effb3](https://github.com/lifespikes/packages/commit/a2effb320accacff549762e303d65c50e19e452b))
+* move rhf to peer deps ([97ca918](https://github.com/lifespikes/packages/commit/97ca9184fafb83e67820ede252961d38045d31ef))
+* override version to fix release thing ([31af0c6](https://github.com/lifespikes/packages/commit/31af0c6868174e2aa6c7b7c3f51f49805454475c))
+* **ui:** bump version ([cb09624](https://github.com/lifespikes/packages/commit/cb096249408e05b1d3011f772706834b18612014))
+* **ui:** install ([1560484](https://github.com/lifespikes/packages/commit/1560484f997c71858bfff9e01d731614b3cfda22))
+
 ## [1.7.6](https://github.com/lifespikes/packages/compare/v1.7.5...v1.7.6) (2024-07-08)
 
 
