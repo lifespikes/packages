@@ -26,7 +26,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: `VERSION=\${nextRelease.version} npx nx run-many -t release && VERSION=\${nextRelease.version} npx -p replace-json-property rjp ./package.json version \${nextRelease.version}`,
+        prepareCmd: `VERSION=1.8.2 npx nx run-many -t release && VERSION=1.8.2 npx -p replace-json-property rjp ./package.json version 1.8.2`,
       },
     ],
     [
@@ -34,7 +34,7 @@ module.exports = {
       {
         assets: [`libs/**/package.json`, `package.json`, `CHANGELOG.md`],
         message:
-          'chore(release): -v${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+          'chore(release): -v1.8.2 [skip ci]\n\n${nextRelease.notes}',
       },
     ],
   ],
