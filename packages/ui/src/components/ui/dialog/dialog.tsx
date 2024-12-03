@@ -3,8 +3,7 @@
 import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
-
-import { cn } from '@lifespikes/ui/lib/utils';
+import { cn } from '@lifespikes/ui';
 
 const Dialog = DialogPrimitive.Root;
 
@@ -16,12 +15,15 @@ const DialogClose = DialogPrimitive.Close;
 
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> & {
+    overlayClassName?: string;
+  }
+>(({ className, overlayClassName, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
       'fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      overlayClassName,
       className
     )}
     {...props}
@@ -34,6 +36,7 @@ export type DialogContentProps = React.ComponentPropsWithoutRef<
 > & {
   onOverlayClick?: () => void;
   isCloseBtnRender?: boolean;
+  overlayClassName?: string;
 };
 
 const DialogContent = React.forwardRef<
@@ -41,11 +44,21 @@ const DialogContent = React.forwardRef<
   DialogContentProps
 >(
   (
-    { className, children, onOverlayClick, isCloseBtnRender = true, ...props },
+    {
+      className,
+      children,
+      onOverlayClick,
+      isCloseBtnRender = true,
+      overlayClassName,
+      ...props
+    },
     ref
   ) => (
     <DialogPortal>
-      <DialogOverlay onClick={onOverlayClick} />
+      <DialogOverlay
+        onClick={onOverlayClick}
+        overlayClassName={overlayClassName}
+      />
       <DialogPrimitive.Content
         ref={ref}
         className={cn(
