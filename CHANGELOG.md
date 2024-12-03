@@ -1,3 +1,13 @@
+## [1.8.1](https://github.com/lifespikes/packages/compare/v1.8.0...v1.8.1) (2024-12-03)
+
+
+### Chores
+
+* override this thing ([68bfd19](https://github.com/lifespikes/packages/commit/68bfd19d9cce4b5570f86e6a16cf97f99dc53da1))
+* possibility to add more classes or overwrite classes to the dialog overlay ([937b63c](https://github.com/lifespikes/packages/commit/937b63c85a51f973f34a7c1e234bc2a3e83003d8))
+* rollback version ([e4c0079](https://github.com/lifespikes/packages/commit/e4c0079f702568d994913d9f7a39a7ab4f046731))
+* version ([1d91151](https://github.com/lifespikes/packages/commit/1d9115177824fd18f95f90e08f2a1f14193f06eb))
+
 ## [1.8.0](https://github.com/lifespikes/packages/compare/v1.7.6...v1.8.0) (2024-11-12)
 
 
