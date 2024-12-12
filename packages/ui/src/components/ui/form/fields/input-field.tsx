@@ -28,8 +28,10 @@ export const InputField = <
         return (
           <>
             <FormLabel>
-              {label}
-              {requiredSign && <span className="text-red-700">*</span>}
+              <div className="flex">
+                {label}
+                {requiredSign && <span className="text-red-700">*</span>}
+              </div>
             </FormLabel>
             <Input {...field} {...props} id={fieldContext.formItemId} />
           </>
