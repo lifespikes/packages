@@ -1,3 +1,15 @@
+## [1.9.0](https://github.com/lifespikes/packages/compare/v1.8.2...v1.9.0) (2024-12-12)
+
+
+### Features
+
+* add required sign on input field ([7e8d31f](https://github.com/lifespikes/packages/commit/7e8d31f85d741347facea6cc36ffd42da46bcca0))
+
+
+### Chores
+
+* rollback ([4380a74](https://github.com/lifespikes/packages/commit/4380a74692c0de847fcf4a05f4104c25ce3b52fa))
+
 ## [1.8.1](https://github.com/lifespikes/packages/compare/v1.8.0...v1.8.1) (2024-12-03)
 
 
