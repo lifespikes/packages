@@ -10,24 +10,27 @@ import {
 
 export interface InputFieldProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > extends FormFieldType<TFieldValues, TName>,
     Omit<InputProps, 'name' | 'defaultValue'>,
     React.RefAttributes<HTMLInputElement> {}
 
 export const InputField = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   ...props
 }: InputFieldProps<TFieldValues, TName>) => {
   return (
     <FormField
       {...props}
-      render={({ field, label, fieldContext }) => {
+      render={({ field, label, fieldContext, requiredSign = false }) => {
         return (
           <>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel>
+              {label}
+              {requiredSign && <span className="text-red-700">*</span>}
+            </FormLabel>
             <Input {...field} {...props} id={fieldContext.formItemId} />
           </>
         );
