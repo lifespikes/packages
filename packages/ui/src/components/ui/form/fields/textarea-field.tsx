@@ -24,7 +24,7 @@ export const TextAreaField = <
   return (
     <FormField
       {...props}
-      render={({ field, label, fieldContext = false }) => {
+      render={({ field, label, fieldContext }) => {
         return (
           <>
             <FormLabel>
