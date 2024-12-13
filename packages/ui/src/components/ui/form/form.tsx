@@ -115,8 +115,8 @@ const FormField = <
                 context={values}
                 render={props.render}
                 name={props.name}
-                label={label}
                 requiredSign={requiredSign}
+                label={label}
               />
               <FormMessage />
             </FormItem>
