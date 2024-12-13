@@ -24,10 +24,15 @@ export const TextAreaField = <
   return (
     <FormField
       {...props}
-      render={({ field, label, fieldContext }) => {
+      render={({ field, label, fieldContext, requiredSign = false }) => {
         return (
           <>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel>
+              <div className="flex">
+                {label}
+                {requiredSign && <span className="text-red-700">*</span>}
+              </div>
+            </FormLabel>
             <Textarea {...field} {...props} id={fieldContext.formItemId} />
           </>
         );
