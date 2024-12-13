@@ -24,13 +24,13 @@ export const InputField = <
   return (
     <FormField
       {...props}
-      render={({ field, label, fieldContext, requiredSign = false }) => {
+      render={({ field, label, fieldContext }) => {
         return (
           <>
             <FormLabel>
               <div className="flex">
                 {label}
-                {requiredSign && <span className="text-red-700">*</span>}
+                {props.requiredSign && <span className="text-red-700">*</span>}
               </div>
             </FormLabel>
             <Input {...field} {...props} id={fieldContext.formItemId} />

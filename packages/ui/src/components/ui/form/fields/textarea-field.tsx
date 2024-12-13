@@ -30,7 +30,7 @@ export const TextAreaField = <
             <FormLabel>
               <div className="flex">
                 {label}
-                {requiredSign && <span className="text-red-700">*</span>}
+                {props.requiredSign && <span className="text-red-700">*</span>}
               </div>
             </FormLabel>
             <Textarea {...field} {...props} id={fieldContext.formItemId} />
