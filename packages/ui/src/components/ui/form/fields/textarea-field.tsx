@@ -27,7 +27,10 @@ export const TextAreaField = <
       render={({ field, label, fieldContext }) => {
         return (
           <>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel>
+              {label}
+              {props.requiredSign && <span className="text-red-700">*</span>}
+            </FormLabel>
             <Textarea {...field} {...props} id={fieldContext.formItemId} />
           </>
         );
