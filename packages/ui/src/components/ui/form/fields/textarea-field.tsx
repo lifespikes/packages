@@ -28,10 +28,8 @@ export const TextAreaField = <
         return (
           <>
             <FormLabel>
-              <div className="flex">
-                {label}
-                {props.requiredSign && <span className="text-red-700">*</span>}
-              </div>
+              {label}
+              {props.requiredSign && <span className="text-red-700">*</span>}
             </FormLabel>
             <Textarea {...field} {...props} id={fieldContext.formItemId} />
           </>
