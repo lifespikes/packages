@@ -47,7 +47,7 @@ export type FormFieldProps<
 > = {
   render: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
   label?: string;
-  showErrors: boolean;
+  showErrors?: boolean;
 } & Omit<ControllerProps<TFieldValues, TName>, 'render'>;
 
 export type FormFieldType<
