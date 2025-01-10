@@ -47,6 +47,7 @@ export type FormFieldProps<
 > = {
   render: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
   label?: string;
+  showErrors: boolean;
 } & Omit<ControllerProps<TFieldValues, TName>, 'render'>;
 
 export type FormFieldType<
@@ -90,6 +91,7 @@ const FormField = <
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   label,
+  showErrors = true,
   ...props
 }: FormFieldProps<TFieldValues, TName>) => {
   const { control } = useFormContext<TFieldValues>();
@@ -113,7 +115,7 @@ const FormField = <
                 name={props.name}
                 label={label}
               />
-              <FormMessage />
+              {showErrors && <FormMessage />}
             </FormItem>
           );
         }}
