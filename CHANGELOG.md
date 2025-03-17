@@ -1,3 +1,22 @@
+## [1.10.0](https://github.com/lifespikes/packages/compare/v1.9.0...v1.10.0) (2025-03-17)
+
+
+### Features
+
+* add required sign conditional on text area field ([ff1b4a5](https://github.com/lifespikes/packages/commit/ff1b4a515256f220fea7f79a792f4066bc43b3ba))
+* possibility to choose whether to render the error message in the form input ([e46c3e0](https://github.com/lifespikes/packages/commit/e46c3e0d4e19b82194996d7d01bac76d5f942e1c))
+* possibility to hide chevron down in accordion component ([9aa5ecd](https://github.com/lifespikes/packages/commit/9aa5ecd37d9588dc4c4e9246a603cf1efbaf7f83))
+
+
+### Chores
+
+* minor chage ([46b788e](https://github.com/lifespikes/packages/commit/46b788e40f7efea72842d15aae0b5be05510e7b4))
+* minor change ([4d0a0a1](https://github.com/lifespikes/packages/commit/4d0a0a1954d64060a3c1765e9db2cb5759a636dc))
+* minor change ([57a5d56](https://github.com/lifespikes/packages/commit/57a5d56ada4b0af69e48715f94c99df23d773625))
+* minor change ([a3f3ae7](https://github.com/lifespikes/packages/commit/a3f3ae7837e64ec49c8a503ea7865d99a02634b0))
+* minor change ([c0c6c88](https://github.com/lifespikes/packages/commit/c0c6c887ccb34f42aa12f2b17ee0fc53e3ca12a4))
+* minor change ([8389897](https://github.com/lifespikes/packages/commit/838989766396af1cac6e916d5104212049047d03))
+
 ## [1.9.0](https://github.com/lifespikes/packages/compare/v1.8.2...v1.9.0) (2024-12-12)
 
 
