@@ -48,6 +48,7 @@ export type FormFieldProps<
   render: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
   label?: string;
   requiredSign?: boolean;
+  showErrors?: boolean;
 } & Omit<ControllerProps<TFieldValues, TName>, 'render'>;
 
 export type FormFieldType<
@@ -94,6 +95,7 @@ const FormField = <
 >({
   label,
   requiredSign,
+  showErrors = true,
   ...props
 }: FormFieldProps<TFieldValues, TName>) => {
   const { control } = useFormContext<TFieldValues>();
@@ -118,7 +120,7 @@ const FormField = <
                 requiredSign={requiredSign}
                 label={label}
               />
-              <FormMessage />
+              {showErrors && <FormMessage />}
             </FormItem>
           );
         }}
