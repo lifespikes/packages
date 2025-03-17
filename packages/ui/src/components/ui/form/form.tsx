@@ -47,6 +47,7 @@ export type FormFieldProps<
 > = {
   render: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
   label?: string;
+  requiredSign?: boolean;
 } & Omit<ControllerProps<TFieldValues, TName>, 'render'>;
 
 export type FormFieldType<
@@ -66,10 +67,11 @@ const FormFieldWrapper = <
 >(props: {
   context: Omit<
     RenderContext<TFieldValues, TName>,
-    'label' | 'name' | 'fieldContext'
+    'label' | 'name' | 'fieldContext' | 'requiredSign'
   >;
   label?: string;
   name?: string;
+  requiredSign?: boolean;
   render?: (context: RenderContext<TFieldValues, TName>) => React.ReactElement;
 }) => {
   const labelFromName = labelFromFieldName(props.name ?? '');
@@ -81,6 +83,7 @@ const FormFieldWrapper = <
     ...props.context,
     fieldContext,
     label: defaultLabel,
+    requiredSign: props.requiredSign,
     labelFromName,
   });
 };
@@ -90,6 +93,7 @@ const FormField = <
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   label,
+  requiredSign,
   ...props
 }: FormFieldProps<TFieldValues, TName>) => {
   const { control } = useFormContext<TFieldValues>();
@@ -111,6 +115,7 @@ const FormField = <
                 context={values}
                 render={props.render}
                 name={props.name}
+                requiredSign={requiredSign}
                 label={label}
               />
               <FormMessage />
